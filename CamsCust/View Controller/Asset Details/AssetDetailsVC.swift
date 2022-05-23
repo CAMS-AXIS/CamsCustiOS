@@ -1,19 +1,21 @@
 //
-//  ViewController.swift
+//  ProductDetailsVC.swift
 //  CamsCust
 //
-//  Created by Dipika Ghosh on 09/05/22.
+//  Created by Dipika Ghosh on 16/05/22.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class AssetDetailsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
+    
 
+   
 
 }
-

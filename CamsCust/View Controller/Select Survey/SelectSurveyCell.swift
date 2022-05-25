@@ -8,7 +8,10 @@
 import UIKit
 
 class SelectSurveyCell: UITableViewCell {
-
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var imgCheck: UIImageView!
+    @IBOutlet weak var viewContent: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

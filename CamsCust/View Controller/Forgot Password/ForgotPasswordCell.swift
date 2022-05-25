@@ -9,9 +9,12 @@ import UIKit
 
 class ForgotPasswordCell: UITableViewCell {
 
+    @IBOutlet weak var bttnContinue: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bttnContinue.clipsToBounds = true
+        bttnContinue.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

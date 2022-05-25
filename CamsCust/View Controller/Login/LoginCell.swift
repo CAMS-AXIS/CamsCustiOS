@@ -8,8 +8,13 @@
 import UIKit
 
 class LoginCell: UITableViewCell {
-
+    @IBOutlet weak var bttnForgotPassword: UIButton!
+    @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var bttnLogin: UIButton!
+    
+    
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

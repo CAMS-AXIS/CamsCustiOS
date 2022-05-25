@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import AVKit
-import FirebaseDynamicLinks
 
 struct ScreenSize {
     static let SCREEN_BOUNDS = UIScreen.main.bounds
@@ -233,10 +232,7 @@ extension UIViewController {
         return emailPredicate.evaluate(with: enteredEmail)
         
     }
-    func displayToast(message:String)  {
-        self.view.makeToast(message, duration: 1.0, position: .center)
-        
-    }
+
     //MARK: clear all user default data
     
     func removeUserDefaultValue(key: String)
@@ -1041,19 +1037,6 @@ func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CG
   layer.rasterizationScale = scale ? UIScreen.main.scale : 1
 }
     
-    
-//    func dropShadow(scale: Bool = true) {
-//      layer.masksToBounds = false
-//      layer.shadowColor = UIColor.gray.cgColor
-//      layer.shadowOpacity = 0.5
-//      layer.shadowOffset = CGSize(width: -1, height: 1)
-//      layer.shadowRadius = 10
-//
-//      layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-//      layer.shouldRasterize = true
-//      layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-//    }
-    
     func animShow() {
         UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseIn],
                        animations: {
@@ -1168,46 +1151,73 @@ extension Sequence where Element: Hashable {
     }
 }
 
-func createDynamicLinkForProfileWithFirebase( userId:String, userImage:String , superViewController:UIViewController,username: String) {
-    
-    guard let link = URL(string:"https://simiyon.page.link/simi123" + "?" + userId) else {
-        return
-        
+extension NSMutableAttributedString {
+
+    func setColor(color: UIColor, forText stringValue: String) {
+       let range: NSRange = self.mutableString.range(of: stringValue, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
-    let dynamicLinksDomain = "https://simiyon.page.link"
-    let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomain)
-    
-    linkBuilder?.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.quytech.Video-Consultancy")
-    linkBuilder?.iOSParameters?.appStoreID = "1605902406"
-    linkBuilder?.iOSParameters?.minimumAppVersion = "1.0"
-    
-    linkBuilder?.androidParameters = DynamicLinkAndroidParameters(packageName: "com.quytech.Video-Consultancy")
-    linkBuilder?.androidParameters?.minimumVersion = 1
-    
-    linkBuilder?.socialMetaTagParameters = DynamicLinkSocialMetaTagParameters()
-    linkBuilder?.socialMetaTagParameters?.title = "\(username)"
-    linkBuilder?.socialMetaTagParameters?.descriptionText = ""  //courseTitle
-    
-    if let encoded = userImage.addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
-        linkBuilder?.socialMetaTagParameters?.imageURL = URL.init(string:userImage)
-    }
-    linkBuilder?.link = link
-  //  guard let longURL = linkBuilder?.url else { return }
-    print("The long dynamic link is \(link)")
-    
-    let activityViewController = UIActivityViewController(activityItems: [link], applicationActivities: nil)
-    superViewController.present(activityViewController, animated: true) {
-    }
-    
-    
-    
-//    linkBuilder?.shorten(completion: { (url, warnings, error) in
-//
-//        guard let url = url else { return }
-//        print("The short URL is: \(url.absoluteString)")
-//        let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-//        superViewController.present(activityViewController, animated: true) {
-//        }
-//    })
-    
+
+}
+public class CircularProgressView: UIView {
+  // First create two layer properties
+  private lazy var circleLayer : CAShapeLayer = {
+    let shape = CAShapeLayer()
+    shape.fillColor = UIColor.clear.cgColor
+    shape.lineCap = .round
+    shape.lineWidth = 8.0
+    shape.strokeColor = #colorLiteral(red: 0.7999292612, green: 0.8000453115, blue: 0.7999040484, alpha: 1)
+    return shape
+
+  }()
+
+  private lazy var progressLayer : CAShapeLayer = {
+    let progress = CAShapeLayer()
+    progress.fillColor = UIColor.clear.cgColor
+   // progress.lineCap = .round
+       progress.lineWidth = 8.0
+       progress.strokeEnd = 0
+    progress.strokeColor = UIColor.systemPink.cgColor
+    return progress
+  }()
+
+
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    createCircularPath()
+  }
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    createCircularPath()
+  }
+
+
+ private func createCircularPath() {
+
+    updatePath()
+    layer.addSublayer(circleLayer)
+    layer.addSublayer(progressLayer)
+  }
+  public override func layoutSubviews() {
+    updatePath()
+  }
+
+  private func updatePath() {
+    let circularPath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0), radius: 80, startAngle: -.pi / 2, endAngle: 3 * .pi / 2, clockwise: true)
+
+       circleLayer.path = circularPath.cgPath
+       progressLayer.path = circularPath.cgPath
+  }
+
+}
+public extension CircularProgressView {
+  func progressAnimation(_ percentage:Float) {
+
+    let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
+    circularProgressAnimation.duration = 1
+    circularProgressAnimation.toValue = Float( percentage / 100 )
+    circularProgressAnimation.fillMode = .forwards
+    circularProgressAnimation.isRemovedOnCompletion = false
+    progressLayer.add(circularProgressAnimation, forKey: "progressAnim")
+  }
 }

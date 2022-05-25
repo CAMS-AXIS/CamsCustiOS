@@ -25,17 +25,17 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         print("View Controller is : \(topViewController) \n", terminator: "")
         switch(index){
         case 0:
-            print("Home\n", terminator: "")
+            print("SwitchAccountVC\n", terminator: "")
 
-            self.openViewControllerBasedOnIdentifier("Home")
+            self.openViewControllerBasedOnIdentifier("SwitchAccountVC")
             
             break
-        case 1:
-            print("Play\n", terminator: "")
-            
-            self.openViewControllerBasedOnIdentifier("PlayVC")
-            
-            break
+//        case 1:
+//            print("Play\n", terminator: "")
+//
+//            self.openViewControllerBasedOnIdentifier("PlayVC")
+//
+//            break
         default:
             print("default\n", terminator: "")
         }
@@ -53,13 +53,13 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         }
     }
     
-    func addSlideMenuButton(){
-        let btnShowMenu = UIButton(type: UIButton.ButtonType.system)
-        btnShowMenu.setImage(self.defaultMenuImage(), for: UIControl.State())
-        btnShowMenu.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        btnShowMenu.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControl.Event.touchUpInside)
-        let customBarItem = UIBarButtonItem(customView: btnShowMenu)
-        self.navigationItem.leftBarButtonItem = customBarItem;
+    func addSlideMenuButton(btn:UIButton){
+      //  btn = UIButton(type: UIButton.ButtonType.system)
+      //  btn.setImage(self.defaultMenuImage(), for: UIControl.State())
+      //  btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControl.Event.touchUpInside)
+      //  let customBarItem = UIBarButtonItem(customView: btn)
+       // self.navigationItem.leftBarButtonItem = customBarItem;
     }
 
     func defaultMenuImage() -> UIImage {

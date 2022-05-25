@@ -1,0 +1,6 @@
+framework module Pods_CamsCust {
+  umbrella header "Pods-CamsCust-umbrella.h"
+
+  export *
+  module * { export * }
+}

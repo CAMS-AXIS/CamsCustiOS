@@ -9,6 +9,7 @@ import UIKit
 
 class FilterSearchCell: UITableViewCell {
 
+    @IBOutlet weak var imgCheck: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

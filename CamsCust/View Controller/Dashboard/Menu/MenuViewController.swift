@@ -42,7 +42,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         tblMenuOptions.tableFooterView = UIView()
-        // Do any additional setup after loading the view.
+        tblMenuOptions.separatorStyle = .none
+        tblMenuOptions.clipsToBounds = true
+        tblMenuOptions.layer.cornerRadius = 35
+        tblMenuOptions.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,19 +55,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        arrayMenuOptions.removeAll()
         updateArrayMenuOptions()
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Home", "icon":"HomeIcon"])
-        arrayMenuOptions.append(["title":"Play", "icon":"PlayIcon"])
+        arrayMenuOptions.append(["title":"SWITCH ACCOUNT", "icon":"switchAccount"])
+        arrayMenuOptions.append(["title":"LOGOUT", "icon":"logout"])
+        arrayMenuOptions.append(["title":"EDIT ACCOUNT", "icon":"user"])
         
         tblMenuOptions.reloadData()
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!){
         btnMenu.tag = 0
-        
         if (self.delegate != nil) {
             var index = Int32(button.tag)
             if(button == self.btnCloseMenuOverlay){
@@ -72,7 +76,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             delegate?.slideMenuItemSelectedAtIndex(index)
         }
-        
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
             self.view.layoutIfNeeded()
@@ -85,25 +88,31 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
-        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.backgroundColor = UIColor.clear
-        
         let lblTitle : UILabel = cell.contentView.viewWithTag(101) as! UILabel
         let imgIcon : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
-        
         imgIcon.image = UIImage(named: arrayMenuOptions[indexPath.row]["icon"]!)
         lblTitle.text = arrayMenuOptions[indexPath.row]["title"]!
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let btn = UIButton(type: UIButton.ButtonType.custom)
-        btn.tag = indexPath.row
-        self.onCloseMenuClick(btn)
+        if arrayMenuOptions[indexPath.row]["title"] == "SWITCH ACCOUNT"
+        {
+            let vc = self.storyboard?.instantiateViewController(identifier: "SwitchAccountVC") as! SwitchAccountVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if arrayMenuOptions[indexPath.row]["title"] == "LOGOUT"
+        {
+            
+        }
+        else
+        {
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

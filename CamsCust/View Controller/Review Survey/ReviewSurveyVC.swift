@@ -1,29 +1,48 @@
 //
 //  ReviewSurveyVC.swift
 //  CamsCust
-//
 //  Created by Dipika Ghosh on 19/05/22.
-//
-
 import UIKit
 
 class ReviewSurveyVC: UIViewController {
-
+    @IBOutlet weak var reviewTblVw: UITableView!
+    var cell : ReviewSurveyCell = ReviewSurveyCell()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func bttnBackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
+    
+    func setupTableView(){
+        reviewTblVw.delegate = self
+        reviewTblVw.dataSource = self
+        reviewTblVw.separatorStyle = .none
+    }
 
+}
+extension ReviewSurveyVC:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.ReviewSurveyCell) as! ReviewSurveyCell
+        cell.selectionStyle = .none
+        
+        
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
 }

@@ -56,4 +56,9 @@ struct Constant {
         static let InvisibleSign = "\u{200B}"
 
     }
+    struct Error_Message {
+        static let Username_Error                       = "Please enter your Name"
+        static let Password_Error                       = "Please enter password"
+        static let PasswordCount_Error                  = "Password should be minimum of 6 characters"
+    }
 }

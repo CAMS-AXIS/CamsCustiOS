@@ -15,8 +15,8 @@ class LoginVC: UIViewController {
     var loginCell : LoginCell = LoginCell()
     var objLoginController = LoginController()
     var LoginParam : [String:Any] = [Parameter.LoginParam.email : "",
-                                    // Parameter.LoginParam.device_type : "",
-                                    // Parameter.LoginParam.device_token : "",
+                                     Parameter.LoginParam.device_type : "iOS",
+                                     Parameter.LoginParam.device_token : "",
                                      Parameter.LoginParam.password : ""
     
     ]
@@ -52,21 +52,44 @@ extension LoginVC: UITableViewDelegate,UITableViewDataSource{
         return self.loginTblVw.frame.size.height//UITableView.automaticDimension
     }
     @objc func gotoNextPage(){
-
-        LoginParam[Parameter.LoginParam.email] = loginCell.txtUserName.text!
-        LoginParam[Parameter.LoginParam.password] = loginCell.txtPassword.text!
-        print(LoginParam)
-        objLoginController.Login(Param:LoginParam)
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.DashboardVC) as? DashboardVC
-//        self.navigationController?.pushViewController(dashboardVC!, animated: false)
+        if isValidated(){
+            LoginParam[Parameter.LoginParam.email] = loginCell.txtUserName.text!
+            LoginParam[Parameter.LoginParam.password] = loginCell.txtPassword.text!
+            print(LoginParam)
+            objLoginController.Login(Param:LoginParam)
+        }
     }
     
     @objc func forgotPasswordAction(){
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let forgotPasswordVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.ForgotPasswordVC) as? ForgotPasswordVC
         self.navigationController?.pushViewController(forgotPasswordVC!, animated: false)
+    }
+    func isValidated() -> Bool {
+        if (loginCell.txtUserName.text?.isEmpty)! || loginCell.txtUserName.text == "" || loginCell.txtUserName.text == " " {
+            DispatchQueue.main.async{
+                Utility.showAlert(message: Constant.Error_Message.Username_Error, vc:self )
+            }
+            return false
+        }
+        else if (loginCell.txtPassword.text?.isEmpty)! || loginCell.txtPassword.text == "" || loginCell.txtPassword.text == " " {
+            DispatchQueue.main.async{
+                Utility.showAlert(message: Constant.Error_Message.Password_Error, vc:self )
+            }
+            return false
+        }
+        else if ((loginCell.txtPassword.text?.count)! < 6)
+        {
+            DispatchQueue.main.async{
+                Utility.showAlert(message: Constant.Error_Message.PasswordCount_Error, vc: self)
+            }
+            return false
+        }
+            
+        else
+        {
+            return true
+        }
     }
     
 }
@@ -84,11 +107,12 @@ extension LoginVC:LoginControllerDelegate{
         DispatchQueue.main.async(execute: {() -> Void in
             Utility.alertWithOkMessage(title: Constant.variableText.appName, message: msg, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {
                 self.objLoginModel = LoginModel(dataDict: dataArr)
-                print(self.objLoginModel?.data?.role)
-//                if let token = self.objLoginModel?.token
-//                {
-//                    UserDefaults.standard.set(token, forKey: Constant.user_defaults_value.token)
-//                }
+                print("----===",self.objLoginModel?.data?.role)
+                if self.objLoginModel?.data?.role == "Customers"{
+                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.DashboardVC) as? DashboardVC
+                    self.navigationController?.pushViewController(dashboardVC!, animated: false)
+                }
             })
         })
     }

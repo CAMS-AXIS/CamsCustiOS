@@ -10,8 +10,10 @@ import UIKit
 struct Constant {
     struct Api {
       //  https://pf1rturvya.execute-api.us-east-1.amazonaws.com/development/admin-login
+     //   https://6y03b2vgv2.execute-api.us-east-1.amazonaws.com/development/admin-dashboard-customer
         static let BASE_URL = "https://pf1rturvya.execute-api.us-east-1.amazonaws.com/development/"
         static let LOGIN = BASE_URL + "admin-login"
+        static let DASHBOARD_URL = "https://6y03b2vgv2.execute-api.us-east-1.amazonaws.com/development/admin-dashboard-customer"
     }
     struct CellIdentifier {
         static let DashboardCollectionCell = "DashboardCollectionCell"
@@ -40,6 +42,7 @@ struct Constant {
     }
     struct Server_Key {
         static let code = "code"
+        static let Code = "Code"
         static let data = "data"
         static let message = "message"
         static let token = "token"
@@ -60,5 +63,12 @@ struct Constant {
         static let Username_Error                       = "Please enter your Name"
         static let Password_Error                       = "Please enter password"
         static let PasswordCount_Error                  = "Password should be minimum of 6 characters"
+    }
+    struct user_defaults_value
+    {
+        static let customerID                                    = "customer_id"
+        static let username                                      = "username"
+       
+        
     }
 }

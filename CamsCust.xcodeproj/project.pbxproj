@@ -44,6 +44,8 @@
 		736024CF283E5C4800DBB8B3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736024CD283E5C4800DBB8B3 /* Extension.swift */; };
 		736024D1283E5F0C00DBB8B3 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736024D0283E5F0C00DBB8B3 /* Parameter.swift */; };
 		736024D3283E7C4100DBB8B3 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736024D2283E7C4100DBB8B3 /* LoginModel.swift */; };
+		73708CD92840DEF6006B41AB /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73708CD82840DEF6006B41AB /* DashboardController.swift */; };
+		73708CDB284121D6006B41AB /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73708CDA284121D6006B41AB /* DashboardModel.swift */; };
 		738C30B5282CE38200FB9688 /* AssetsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B4282CE38200FB9688 /* AssetsListVC.swift */; };
 		738C30B7282CE3A400FB9688 /* AssetsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B6282CE3A400FB9688 /* AssetsListCell.swift */; };
 		738C30BA282D342D00FB9688 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B9282D342D00FB9688 /* FilterVC.swift */; };
@@ -130,6 +132,8 @@
 		736024CD283E5C4800DBB8B3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		736024D0283E5F0C00DBB8B3 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		736024D2283E7C4100DBB8B3 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		73708CD82840DEF6006B41AB /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		73708CDA284121D6006B41AB /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
 		738C30B4282CE38200FB9688 /* AssetsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListVC.swift; sourceTree = "<group>"; };
 		738C30B6282CE3A400FB9688 /* AssetsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListCell.swift; sourceTree = "<group>"; };
 		738C30B9282D342D00FB9688 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
@@ -332,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				736024D2283E7C4100DBB8B3 /* LoginModel.swift */,
+				73708CDA284121D6006B41AB /* DashboardModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,6 +413,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		73708CD72840DEB3006B41AB /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				73708CD82840DEF6006B41AB /* DashboardController.swift */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
 		738C30B3282CE36200FB9688 /* Assets List */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +471,7 @@
 		73D133AA283E0FA300E0B1F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73708CD72840DEB3006B41AB /* DashBoard */,
 				73D133AB283E0FAE00E0B1F8 /* Login */,
 			);
 			path = Controller;
@@ -731,6 +745,7 @@
 				73D133B0283E146D00E0B1F8 /* DataManager.swift in Sources */,
 				73B44FAF28353C9C00A00515 /* ActionItemCell.swift in Sources */,
 				735F477528291B1500059909 /* CamsCust.xcdatamodeld in Sources */,
+				73708CDB284121D6006B41AB /* DashboardModel.swift in Sources */,
 				736024CE283E5C4800DBB8B3 /* ExtensionFile.swift in Sources */,
 				734B3CF5282BE97500E6E1CC /* SwitchAccountVC.swift in Sources */,
 				73B44FB22835481500A00515 /* SelectSurveyVC.swift in Sources */,
@@ -745,6 +760,7 @@
 				735F47C228292F4E00059909 /* ForgotPasswordVC.swift in Sources */,
 				734B3CEF282BA79D00E6E1CC /* MenuViewController.swift in Sources */,
 				738C30BE282D3F0100FB9688 /* FilterCell2.swift in Sources */,
+				73708CD92840DEF6006B41AB /* DashboardController.swift in Sources */,
 				734B3CF7282BF17300E6E1CC /* SwitchAccountCell.swift in Sources */,
 				738C30BA282D342D00FB9688 /* FilterVC.swift in Sources */,
 				73D133B9283E19EC00E0B1F8 /* SegmentedProgressBar.swift in Sources */,

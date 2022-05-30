@@ -2,18 +2,37 @@
 //  CamsCust
 //  Created by Dipika Ghosh on 09/05/22.
 import UIKit
-
+import SwiftyJSON
 class DashboardVC: BaseViewController {
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var bttnMenu: UIButton!
+    @IBOutlet weak var lblName: UILabel!
+    
+    @IBOutlet weak var lblAssetCount: UILabel!
+    
+    @IBOutlet weak var lblActionItemsCount: UILabel!
+    
+    
+    
     
     var collectionCell : DashboardCollectionCell = DashboardCollectionCell()
-
+    var objDashboardController = DashboardController()
+    var param : [String:Any] = [Parameter.DashboardParam.customer_id:""]
+    var objDashboardModel : DashboardModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        objDashboardController.delegate = self
         addSlideMenuButton(btn: bttnMenu)
         setupCollectionVw()
+        guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
         
+        guard let username = UserDefaults.standard.value(forKey: Constant.user_defaults_value.username) as? String else{return}
+
+        self.lblName.text = "Welcome, \(username)"
+        param[Parameter.DashboardParam.customer_id] = "\(customerID)"
+        print(param)
+        objDashboardController.DashboardDetails(Param: param)
     }
     func setupCollectionVw(){
         myCollectionView.dataSource = self
@@ -40,14 +59,40 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-       
+        if let _ = self.objDashboardModel?.data?.tiles{
+            return (self.objDashboardModel?.data?.tiles.count)!
+        }else{
+            return 0
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellIdentifier.DashboardCollectionCell, for: indexPath) as! DashboardCollectionCell
+        if let _ = self.objDashboardModel?.data?.tiles{
+            collectionCell.chartView.progressAnimation(Float(self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0))
         
-        collectionCell.chartView.progressAnimation(25.0)
-        
+           // collectionCell.chartView
+            
+            
+            let myDouble = self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0
+            collectionCell.label.textColor = UIColor.black
+            collectionCell.label.font = UIFont(name: "Inter-Bold", size: 15.0)
+            collectionCell.label.numberOfLines = 0
+            
+            collectionCell.label.frame = CGRect(x: (self.collectionCell.chartView.bounds.size.width/2) - 40,y: (self.collectionCell.chartView.bounds.size.height/2) - 5,width: self.collectionCell.chartView.bounds.size.width, height: 60)
+            
+            let string: NSMutableAttributedString = NSMutableAttributedString(string: "\(self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? "") \n \(String(format: "%.2f", myDouble))%")
+            string.setColor(color: UIColor.systemPink, forText: (self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? ""))
+            string.setColor(color: UIColor.black, forText: "\(myDouble)%")
+            collectionCell.label.attributedText = string
+            
+            collectionCell.label.textAlignment = .center
+            collectionCell.label.sizeToFit()
+            collectionCell.chartView.addSubview(collectionCell.label)
+            
+      
+            self.lblAssetCount.text = "\(self.objDashboardModel?.data?.assetCount ?? 0)"
+            self.lblActionItemsCount.text = "\(self.objDashboardModel?.data?.actionItems ?? 0)"
+        }
         return collectionCell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -62,4 +107,25 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
     }
         
 
+}
+extension DashboardVC:DashboardControllerDelegate{
+    func dashboardFailedResponse(error: String) {
+        DataManager.shared.hideLoader()
+        DispatchQueue.main.async(execute: {() -> Void in
+            Utility.alertWithOkMessage(title: Constant.variableText.appName, message: error, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {})
+        })
+    }
+    
+    func dashboardSuccessResponse(dataArr: JSON, msg: String) {
+        DataManager.shared.hideLoader()
+        print("----->",dataArr)
+        DispatchQueue.main.async(execute: {() -> Void in
+            self.objDashboardModel = DashboardModel(dataDict: dataArr)
+            print("=======++++",self.objDashboardModel?.data?.tiles.count)
+            self.myCollectionView.reloadData()
+        })
+    }
+    
+  
+   
 }

@@ -13,4 +13,7 @@ struct LoginParam {
     static let device_token                 = "DeviceToken"
     static let device_type                  = "DeviceType"
 }
+    struct DashboardParam {
+        static let customer_id = "customer_id"
+    }
 }

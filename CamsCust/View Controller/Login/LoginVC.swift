@@ -100,7 +100,6 @@ extension LoginVC:LoginControllerDelegate{
             Utility.alertWithOkMessage(title: Constant.variableText.appName, message: error, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {})
         })
     }
-    
     func loginSuccessResponse(dataArr: JSON, msg: String) {
         DataManager.shared.hideLoader()
         print("----->",dataArr)
@@ -109,6 +108,17 @@ extension LoginVC:LoginControllerDelegate{
                 self.objLoginModel = LoginModel(dataDict: dataArr)
                 print("----===",self.objLoginModel?.data?.role)
                 if self.objLoginModel?.data?.role == "Customers"{
+                    
+                    if let customerID = self.objLoginModel?.data?.customerID
+                    {
+                        UserDefaults.standard.set(customerID, forKey: Constant.user_defaults_value.customerID)
+                    }
+                    if let username = self.objLoginModel?.data?.username
+                    {
+                        UserDefaults.standard.set(username, forKey: Constant.user_defaults_value.username)
+                    }
+                    
+                    
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.DashboardVC) as? DashboardVC
                     self.navigationController?.pushViewController(dashboardVC!, animated: false)
@@ -116,9 +126,4 @@ extension LoginVC:LoginControllerDelegate{
             })
         })
     }
-    
-   
-    
-    
-    
 }

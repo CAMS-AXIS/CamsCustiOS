@@ -117,6 +117,9 @@ extension LoginVC:LoginControllerDelegate{
                     {
                         UserDefaults.standard.set(username, forKey: Constant.user_defaults_value.username)
                     }
+                    if let customerLogo = self.objLoginModel?.data?.customerLogo{
+                        UserDefaults.standard.set(customerLogo, forKey: Constant.user_defaults_value.customerLogo)
+                    }
                     
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

@@ -10,4 +10,6 @@ target 'CamsCust' do
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
+  pod 'SDWebImage'
+  pod 'SDWebImage'
 end

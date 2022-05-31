@@ -3,6 +3,7 @@
 //  Created by Dipika Ghosh on 09/05/22.
 import UIKit
 import SwiftyJSON
+import SDWebImage
 class DashboardVC: BaseViewController {
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var bttnMenu: UIButton!
@@ -11,9 +12,8 @@ class DashboardVC: BaseViewController {
     @IBOutlet weak var lblAssetCount: UILabel!
     
     @IBOutlet weak var lblActionItemsCount: UILabel!
-    
-    
-    
+
+    @IBOutlet weak var imgLogo: UIImageView!
     
     var collectionCell : DashboardCollectionCell = DashboardCollectionCell()
     var objDashboardController = DashboardController()
@@ -29,6 +29,10 @@ class DashboardVC: BaseViewController {
         
         guard let username = UserDefaults.standard.value(forKey: Constant.user_defaults_value.username) as? String else{return}
 
+        guard let logo = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerLogo) as? String else{return}
+        self.imgLogo.sd_setImage(with: URL(string: logo), placeholderImage: UIImage(named: ""))
+
+        
         self.lblName.text = "Welcome, \(username)"
         param[Parameter.DashboardParam.customer_id] = "\(customerID)"
         print(param)
@@ -70,7 +74,7 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
         if let _ = self.objDashboardModel?.data?.tiles{
             collectionCell.chartView.progressAnimation(Float(self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0))
         
-           // collectionCell.chartView
+//            collectionCell.chartView
             
             
             let myDouble = self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0
@@ -78,10 +82,10 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
             collectionCell.label.font = UIFont(name: "Inter-Bold", size: 15.0)
             collectionCell.label.numberOfLines = 0
             
-            collectionCell.label.frame = CGRect(x: (self.collectionCell.chartView.bounds.size.width/2) - 40,y: (self.collectionCell.chartView.bounds.size.height/2) - 5,width: self.collectionCell.chartView.bounds.size.width, height: 60)
+            collectionCell.label.frame = CGRect(x: (self.collectionCell.chartView.bounds.size.width/2) - 35,y: (self.collectionCell.chartView.bounds.size.height/2) - 5,width: self.collectionCell.chartView.bounds.size.width, height: 60)
             
-            let string: NSMutableAttributedString = NSMutableAttributedString(string: "\(self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? "") \n \(String(format: "%.2f", myDouble))%")
-            string.setColor(color: UIColor.systemPink, forText: (self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? ""))
+            let string: NSMutableAttributedString = NSMutableAttributedString(string: "\(self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? "") \n\n \(String(format: "%.2f", myDouble))%")
+            string.setColor(color: UIColor(hexString:(self.objDashboardModel?.data?.tiles[indexPath.row].colorCode)!), forText: (self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? ""))
             string.setColor(color: UIColor.black, forText: "\(myDouble)%")
             collectionCell.label.attributedText = string
             

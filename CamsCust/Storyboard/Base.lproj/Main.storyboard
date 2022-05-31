@@ -15,7 +15,7 @@
         <array key="Inter-Medium.ttf">
             <string>Inter-Medium</string>
         </array>
-        <array key="Inter-Regular.ttf">
+        <array key="Inter-VariableFont_slnt,wght.ttf">
             <string>Inter-Regular</string>
         </array>
     </customFonts>
@@ -455,14 +455,14 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wells fargo" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-Db-JK1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wells fargo" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-Db-JK1">
                                 <rect key="frame" x="5" y="164.5" width="140" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Tyd-eX-YXX"/>
                                     <constraint firstAttribute="height" constant="108" id="ch6-eg-Yj8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2495" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9c-dN-UPB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9c-dN-UPB">
                                 <rect key="frame" x="155" y="164.5" width="215" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -484,7 +484,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="385" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-0J-nkf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-0J-nkf">
                                 <rect key="frame" x="155" y="226" width="215" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -581,6 +581,7 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="bttnMenu" destination="WIO-ra-DQC" id="wuW-Kq-Ib5"/>
+                        <outlet property="imgLogo" destination="lqi-Db-JK1" id="dfq-bQ-pwX"/>
                         <outlet property="lblActionItemsCount" destination="NSi-0J-nkf" id="xQf-UC-a8b"/>
                         <outlet property="lblAssetCount" destination="R9c-dN-UPB" id="1bD-id-VWC"/>
                         <outlet property="lblName" destination="LJ6-cw-TqB" id="76b-Xc-cko"/>

@@ -68,6 +68,7 @@ struct Constant {
     {
         static let customerID                                    = "customer_id"
         static let username                                      = "username"
+        static let customerLogo                                  = "customer_logo"
        
         
     }

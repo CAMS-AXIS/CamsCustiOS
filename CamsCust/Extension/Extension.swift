@@ -1177,7 +1177,7 @@ public class CircularProgressView: UIView {
    // progress.lineCap = .round
        progress.lineWidth = 8.0
        progress.strokeEnd = 0
-    progress.strokeColor = UIColor.systemPink.cgColor
+       progress.strokeColor = UIColor.systemPink.cgColor
     return progress
   }()
 

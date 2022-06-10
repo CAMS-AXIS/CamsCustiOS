@@ -9,6 +9,7 @@ import UIKit
 
 class ForgotPasswordCell: UITableViewCell {
 
+    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var bttnContinue: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()

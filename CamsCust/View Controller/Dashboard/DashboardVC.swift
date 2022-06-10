@@ -74,15 +74,13 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
         if let _ = self.objDashboardModel?.data?.tiles{
             collectionCell.chartView.progressAnimation(Float(self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0))
         
-//            collectionCell.chartView
             
+            collectionCell.chartView.customStrokeColor = UIColor(hexString:(self.objDashboardModel?.data?.tiles[indexPath.row].colorCode)!).cgColor
             
             let myDouble = self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0
             collectionCell.label.textColor = UIColor.black
             collectionCell.label.font = UIFont(name: "Inter-Bold", size: 15.0)
             collectionCell.label.numberOfLines = 0
-            
-            collectionCell.label.frame = CGRect(x: (self.collectionCell.chartView.bounds.size.width/2) - 35,y: (self.collectionCell.chartView.bounds.size.height/2) - 5,width: self.collectionCell.chartView.bounds.size.width, height: 60)
             
             let string: NSMutableAttributedString = NSMutableAttributedString(string: "\(self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? "") \n\n \(String(format: "%.2f", myDouble))%")
             string.setColor(color: UIColor(hexString:(self.objDashboardModel?.data?.tiles[indexPath.row].colorCode)!), forText: (self.objDashboardModel?.data?.tiles[indexPath.row].issueCategory ?? ""))
@@ -91,9 +89,10 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
             
             collectionCell.label.textAlignment = .center
             collectionCell.label.sizeToFit()
-            collectionCell.chartView.addSubview(collectionCell.label)
             
-      
+            collectionCell.chartView.layoutSubviews()
+            collectionCell.chartView.addSubview(collectionCell.label)
+                  
             self.lblAssetCount.text = "\(self.objDashboardModel?.data?.assetCount ?? 0)"
             self.lblActionItemsCount.text = "\(self.objDashboardModel?.data?.actionItems ?? 0)"
         }

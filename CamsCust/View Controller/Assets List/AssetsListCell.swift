@@ -8,7 +8,13 @@
 import UIKit
 
 class AssetsListCell: UITableViewCell {
-
+    @IBOutlet weak var imgAsset: UIImageView!
+    @IBOutlet weak var lblServiceName: UILabel!
+    @IBOutlet weak var lblDesc: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblActionCount: UILabel!
+    
+    @IBOutlet weak var lblCode: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

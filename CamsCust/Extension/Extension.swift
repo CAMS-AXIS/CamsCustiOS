@@ -1160,6 +1160,8 @@ extension NSMutableAttributedString {
 
 }
 public class CircularProgressView: UIView {
+    var customStrokeColor:CGColor = UIColor.systemPink.cgColor
+    
   // First create two layer properties
   private lazy var circleLayer : CAShapeLayer = {
     let shape = CAShapeLayer()
@@ -1177,15 +1179,16 @@ public class CircularProgressView: UIView {
    // progress.lineCap = .round
        progress.lineWidth = 8.0
        progress.strokeEnd = 0
-       progress.strokeColor = UIColor.systemPink.cgColor
+       progress.strokeColor = customStrokeColor
     return progress
   }()
 
 
-  override init(frame: CGRect) {
+    override init(frame: CGRect) {
     super.init(frame: frame)
     createCircularPath()
   }
+    
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     createCircularPath()
@@ -1207,6 +1210,8 @@ public class CircularProgressView: UIView {
 
        circleLayer.path = circularPath.cgPath
        progressLayer.path = circularPath.cgPath
+    progressLayer.strokeColor = customStrokeColor
+    
   }
 
 }

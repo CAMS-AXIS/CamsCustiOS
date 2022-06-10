@@ -9,7 +9,11 @@ import UIKit
 
 class DashboardCollectionCell: UICollectionViewCell {
     @IBOutlet weak var chartView: CircularProgressView!
-    var label = UILabel()
+    
+    
+    @IBOutlet weak var label: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

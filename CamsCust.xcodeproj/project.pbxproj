@@ -14,6 +14,8 @@
 		734B3CF5282BE97500E6E1CC /* SwitchAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CF4282BE97500E6E1CC /* SwitchAccountVC.swift */; };
 		734B3CF7282BF17300E6E1CC /* SwitchAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CF6282BF17300E6E1CC /* SwitchAccountCell.swift */; };
 		734F2BFF28362C8800C42DB1 /* ReviewSurveyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F2BFE28362C8800C42DB1 /* ReviewSurveyVC.swift */; };
+		7350B17F284E403D004DFBEF /* AssetsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350B17E284E403D004DFBEF /* AssetsListController.swift */; };
+		7350B181284F4CE9004DFBEF /* AssetsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350B180284F4CE9004DFBEF /* AssetsListModel.swift */; };
 		735635BA282A53E4007B35B9 /* DashboardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735635B9282A53E4007B35B9 /* DashboardCollectionCell.swift */; };
 		735635BD282A86E3007B35B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735635BC282A86E3007B35B9 /* Constants.swift */; };
 		735F476B28291B1500059909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F476A28291B1500059909 /* AppDelegate.swift */; };
@@ -44,6 +46,7 @@
 		736024CF283E5C4800DBB8B3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736024CD283E5C4800DBB8B3 /* Extension.swift */; };
 		736024D1283E5F0C00DBB8B3 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736024D0283E5F0C00DBB8B3 /* Parameter.swift */; };
 		736024D3283E7C4100DBB8B3 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736024D2283E7C4100DBB8B3 /* LoginModel.swift */; };
+		7365EB4B2847A14F00C7EFF3 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7365EB4A2847A14F00C7EFF3 /* ForgotPasswordController.swift */; };
 		73708CD92840DEF6006B41AB /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73708CD82840DEF6006B41AB /* DashboardController.swift */; };
 		73708CDB284121D6006B41AB /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73708CDA284121D6006B41AB /* DashboardModel.swift */; };
 		738C30B5282CE38200FB9688 /* AssetsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B4282CE38200FB9688 /* AssetsListVC.swift */; };
@@ -96,6 +99,8 @@
 		734B3CF4282BE97500E6E1CC /* SwitchAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchAccountVC.swift; sourceTree = "<group>"; };
 		734B3CF6282BF17300E6E1CC /* SwitchAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchAccountCell.swift; sourceTree = "<group>"; };
 		734F2BFE28362C8800C42DB1 /* ReviewSurveyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSurveyVC.swift; sourceTree = "<group>"; };
+		7350B17E284E403D004DFBEF /* AssetsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListController.swift; sourceTree = "<group>"; };
+		7350B180284F4CE9004DFBEF /* AssetsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListModel.swift; sourceTree = "<group>"; };
 		735635B9282A53E4007B35B9 /* DashboardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionCell.swift; sourceTree = "<group>"; };
 		735635BC282A86E3007B35B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		735F476728291B1500059909 /* CamsCust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamsCust.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +137,7 @@
 		736024CD283E5C4800DBB8B3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		736024D0283E5F0C00DBB8B3 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		736024D2283E7C4100DBB8B3 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		7365EB4A2847A14F00C7EFF3 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		73708CD82840DEF6006B41AB /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		73708CDA284121D6006B41AB /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
 		738C30B4282CE38200FB9688 /* AssetsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListVC.swift; sourceTree = "<group>"; };
@@ -214,6 +220,14 @@
 				73966A0B283CC8C5006C5FD9 /* ReviewSurveyCell.swift */,
 			);
 			path = "Review Survey";
+			sourceTree = "<group>";
+		};
+		7350B17D284E400E004DFBEF /* Asset list */ = {
+			isa = PBXGroup;
+			children = (
+				7350B17E284E403D004DFBEF /* AssetsListController.swift */,
+			);
+			path = "Asset list";
 			sourceTree = "<group>";
 		};
 		735635BB282A86C0007B35B9 /* Utility */ = {
@@ -337,6 +351,7 @@
 			children = (
 				736024D2283E7C4100DBB8B3 /* LoginModel.swift */,
 				73708CDA284121D6006B41AB /* DashboardModel.swift */,
+				7350B180284F4CE9004DFBEF /* AssetsListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,6 +428,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7365EB492847A12E00C7EFF3 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				7365EB4A2847A14F00C7EFF3 /* ForgotPasswordController.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
 		73708CD72840DEB3006B41AB /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +494,8 @@
 		73D133AA283E0FA300E0B1F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7350B17D284E400E004DFBEF /* Asset list */,
+				7365EB492847A12E00C7EFF3 /* Forgot Password */,
 				73708CD72840DEB3006B41AB /* DashBoard */,
 				73D133AB283E0FAE00E0B1F8 /* Login */,
 			);
@@ -766,13 +791,16 @@
 				73D133B9283E19EC00E0B1F8 /* SegmentedProgressBar.swift in Sources */,
 				73D133AD283E0FC800E0B1F8 /* LoginController.swift in Sources */,
 				73B52C2F2832A0A800B95756 /* AssetDetailsVC.swift in Sources */,
+				7350B181284F4CE9004DFBEF /* AssetsListModel.swift in Sources */,
 				735F47A328291ED100059909 /* LoginCell.swift in Sources */,
 				73B44FAD2835377900A00515 /* AssetsCollectionCell.swift in Sources */,
 				736024CF283E5C4800DBB8B3 /* Extension.swift in Sources */,
+				7350B17F284E403D004DFBEF /* AssetsListController.swift in Sources */,
 				736024D1283E5F0C00DBB8B3 /* Parameter.swift in Sources */,
 				73D133B3283E191F00E0B1F8 /* APIManager.swift in Sources */,
 				73EA09EA282EA1F200CCAFA9 /* FilterSearchVC.swift in Sources */,
 				73B44FB42835488700A00515 /* SelectSurveyCell.swift in Sources */,
+				7365EB4B2847A14F00C7EFF3 /* ForgotPasswordController.swift in Sources */,
 				735F47C72829493000059909 /* DashboardVC.swift in Sources */,
 				73966A0C283CC8C5006C5FD9 /* ReviewSurveyCell.swift in Sources */,
 				735F476B28291B1500059909 /* AppDelegate.swift in Sources */,

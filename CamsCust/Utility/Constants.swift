@@ -16,6 +16,7 @@ struct Constant {
         static let DASHBOARD_URL = "https://6y03b2vgv2.execute-api.us-east-1.amazonaws.com/development/admin-dashboard-customer"
         static let FORGOT_PASSWOORD_URL = "https://4x13tqxrhh.execute-api.us-east-1.amazonaws.com/prod/prod-forgot-password"
         static let ASSETS_LIST_URL = "https://f2p75h4j1j.execute-api.us-east-1.amazonaws.com/development/asset_list_customer"
+        static let ACTIONS_ITEMS_LIST_URL = "https://6caq8xuul4.execute-api.us-east-1.amazonaws.com/development/customer_asset_list_action_items"
     }
     struct CellIdentifier {
         static let DashboardCollectionCell = "DashboardCollectionCell"

@@ -408,7 +408,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DASHBOARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLg-Xr-U9H">
-                                        <rect key="frame" x="111.5" y="35.5" width="152.5" height="29.5"/>
+                                        <rect key="frame" x="113" y="36" width="149" height="28"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -441,13 +441,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, John Hansen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJ6-cw-TqB">
-                                <rect key="frame" x="20" y="110" width="335" height="29.5"/>
+                                <rect key="frame" x="20" y="110" width="335" height="28"/>
                                 <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-Tq-cb7">
-                                <rect key="frame" x="20" y="144.5" width="335" height="0.5"/>
+                                <rect key="frame" x="20" y="143" width="335" height="0.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.59999999999999998" id="QGN-uz-41E"/>
@@ -457,26 +457,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wells fargo" translatesAutoresizingMaskIntoConstraints="NO" id="lqi-Db-JK1">
-                                <rect key="frame" x="5" y="164.5" width="140" height="108"/>
+                                <rect key="frame" x="5" y="163" width="140" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Tyd-eX-YXX"/>
                                     <constraint firstAttribute="height" constant="108" id="ch6-eg-Yj8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9c-dN-UPB">
-                                <rect key="frame" x="155" y="164.5" width="215" height="24.5"/>
+                                <rect key="frame" x="155" y="163" width="215" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU4-6Y-lY8">
-                                <rect key="frame" x="155" y="191" width="215" height="24.5"/>
+                                <rect key="frame" x="155" y="188.5" width="215" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXH-9b-kmF">
-                                <rect key="frame" x="155" y="220.5" width="215" height="0.5"/>
+                                <rect key="frame" x="155" y="217" width="215" height="0.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.59999999999999998" id="IXP-gd-Ee6"/>
@@ -486,25 +486,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-0J-nkf">
-                                <rect key="frame" x="155" y="226" width="215" height="24.5"/>
+                                <rect key="frame" x="155" y="222.5" width="215" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action Items" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B52-fX-ITP">
-                                <rect key="frame" x="155" y="252.5" width="215" height="24.5"/>
+                                <rect key="frame" x="155" y="248" width="215" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cw-Kz-ga8">
-                                <rect key="frame" x="155" y="164.5" width="215" height="51"/>
+                                <rect key="frame" x="155" y="163" width="215" height="49"/>
                                 <connections>
                                     <action selector="bttnAssetsAction:" destination="wrE-Ld-gVZ" eventType="touchUpInside" id="AGI-0X-6aI"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GeJ-OF-bvx">
-                                <rect key="frame" x="0.0" y="302.5" width="375" height="497.5"/>
+                                <rect key="frame" x="0.0" y="301" width="375" height="499"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qub-t8-1Cj">
                                     <size key="itemSize" width="177" height="167"/>
@@ -719,7 +719,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWITCH ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O67-DL-4Df">
-                                        <rect key="frame" x="74" y="35.5" width="227.5" height="29.5"/>
+                                        <rect key="frame" x="79.5" y="36" width="216" height="28"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -972,6 +972,12 @@
                                             <constraint firstItem="E2T-zL-qcR" firstAttribute="leading" secondItem="ugm-qb-yk0" secondAttribute="leading" constant="15" id="kND-V8-291"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-um-rh1">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="60"/>
+                                        <connections>
+                                            <action selector="bttnAssetAction:" destination="ZDz-SA-yxa" eventType="touchUpInside" id="jmI-NA-NbD"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAu-7v-iph">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
                                         <subviews>
@@ -990,6 +996,12 @@
                                             <constraint firstAttribute="trailing" secondItem="5NL-ly-J9E" secondAttribute="trailing" constant="15" id="sKb-e2-4B8"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpH-1f-9xr">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
+                                        <connections>
+                                            <action selector="bttnActionItem:" destination="ZDz-SA-yxa" eventType="touchUpInside" id="gLJ-UQ-rgh"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naU-bE-hJu">
                                         <rect key="frame" x="0.0" y="59" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1014,19 +1026,27 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="ugm-qb-yk0" firstAttribute="height" secondItem="9e5-4c-vlZ" secondAttribute="height" id="0zH-HF-fiJ"/>
+                                    <constraint firstItem="BHF-um-rh1" firstAttribute="centerX" secondItem="ugm-qb-yk0" secondAttribute="centerX" id="1wf-WR-sLw"/>
                                     <constraint firstItem="fAu-7v-iph" firstAttribute="width" secondItem="ugm-qb-yk0" secondAttribute="width" id="3LL-hu-6hg"/>
+                                    <constraint firstItem="ZpH-1f-9xr" firstAttribute="height" secondItem="fAu-7v-iph" secondAttribute="height" id="5Ud-0F-z5O"/>
                                     <constraint firstItem="ugm-qb-yk0" firstAttribute="top" secondItem="9e5-4c-vlZ" secondAttribute="top" id="725-vy-QWq"/>
                                     <constraint firstItem="naU-bE-hJu" firstAttribute="bottom" secondItem="ugm-qb-yk0" secondAttribute="bottom" id="Hah-7Q-4wz"/>
+                                    <constraint firstItem="BHF-um-rh1" firstAttribute="width" secondItem="ugm-qb-yk0" secondAttribute="width" id="HxV-hm-5uc"/>
                                     <constraint firstItem="ffu-TV-ORT" firstAttribute="height" secondItem="fAu-7v-iph" secondAttribute="height" id="IuH-KL-aB6"/>
+                                    <constraint firstItem="BHF-um-rh1" firstAttribute="height" secondItem="ugm-qb-yk0" secondAttribute="height" id="KWB-dm-gkU"/>
                                     <constraint firstItem="fAu-7v-iph" firstAttribute="leading" secondItem="ugm-qb-yk0" secondAttribute="trailing" id="RWO-3v-hMP"/>
                                     <constraint firstItem="ffu-TV-ORT" firstAttribute="leading" secondItem="fAu-7v-iph" secondAttribute="leading" id="SkG-RJ-4Mq"/>
+                                    <constraint firstItem="ZpH-1f-9xr" firstAttribute="width" secondItem="fAu-7v-iph" secondAttribute="width" id="TO3-tq-BK2"/>
                                     <constraint firstAttribute="height" constant="60" id="bdk-JR-93y"/>
                                     <constraint firstAttribute="bottom" secondItem="ugm-qb-yk0" secondAttribute="bottom" id="db4-Xg-Y8F"/>
                                     <constraint firstItem="naU-bE-hJu" firstAttribute="leading" secondItem="ugm-qb-yk0" secondAttribute="leading" id="gff-L1-nhY"/>
+                                    <constraint firstItem="ZpH-1f-9xr" firstAttribute="centerY" secondItem="fAu-7v-iph" secondAttribute="centerY" id="iyE-f6-sg6"/>
                                     <constraint firstItem="ugm-qb-yk0" firstAttribute="leading" secondItem="9e5-4c-vlZ" secondAttribute="leading" id="n0V-74-l9T"/>
                                     <constraint firstItem="naU-bE-hJu" firstAttribute="trailing" secondItem="fAu-7v-iph" secondAttribute="trailing" id="qcX-lk-sOl"/>
                                     <constraint firstItem="fAu-7v-iph" firstAttribute="height" secondItem="ugm-qb-yk0" secondAttribute="height" id="quN-Nq-ORH"/>
+                                    <constraint firstItem="ZpH-1f-9xr" firstAttribute="centerX" secondItem="fAu-7v-iph" secondAttribute="centerX" id="sYo-Yk-jhM"/>
                                     <constraint firstAttribute="trailing" secondItem="fAu-7v-iph" secondAttribute="trailing" id="uFo-xp-I9L"/>
+                                    <constraint firstItem="BHF-um-rh1" firstAttribute="centerY" secondItem="ugm-qb-yk0" secondAttribute="centerY" id="vRo-8s-RG0"/>
                                     <constraint firstItem="ffu-TV-ORT" firstAttribute="centerY" secondItem="fAu-7v-iph" secondAttribute="centerY" id="vS6-Av-Mg6"/>
                                     <constraint firstItem="fAu-7v-iph" firstAttribute="centerY" secondItem="ugm-qb-yk0" secondAttribute="centerY" id="xg2-RD-Jlg"/>
                                 </constraints>
@@ -1152,6 +1172,7 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="assetsListTblVw" destination="GVC-eg-g4c" id="IeN-pD-Kjm"/>
+                        <outlet property="lblActionItemsCount" destination="5NL-ly-J9E" id="4h8-K8-zgc"/>
                         <outlet property="lblAssetCount" destination="E2T-zL-qcR" id="e9h-wr-4o7"/>
                     </connections>
                 </viewController>
@@ -1171,13 +1192,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-K4-DgR">
-                                        <rect key="frame" x="148" y="35.5" width="79" height="29.5"/>
+                                        <rect key="frame" x="149.5" y="36" width="76.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-98-CYs">
-                                        <rect key="frame" x="15" y="35.5" width="48" height="29"/>
+                                        <rect key="frame" x="15" y="35.5" width="44" height="29"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="14"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1187,7 +1208,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COV-Mo-dbo">
-                                        <rect key="frame" x="324" y="35.5" width="36" height="29"/>
+                                        <rect key="frame" x="326" y="35.5" width="34" height="29"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="14"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1274,7 +1295,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haY-qV-Q10">
-                                                            <rect key="frame" x="15" y="10" width="26.5" height="17"/>
+                                                            <rect key="frame" x="15" y="10" width="25" height="17"/>
                                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1297,7 +1318,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahm-5H-aaL">
-                                                            <rect key="frame" x="324.5" y="10" width="16.5" height="17"/>
+                                                            <rect key="frame" x="325.5" y="10" width="15.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1366,13 +1387,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVz-fv-iSe">
-                                        <rect key="frame" x="148" y="35.5" width="79" height="29.5"/>
+                                        <rect key="frame" x="149.5" y="36" width="76.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atb-fP-3kt">
-                                        <rect key="frame" x="15" y="35.5" width="48" height="29"/>
+                                        <rect key="frame" x="15" y="35.5" width="44" height="29"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="14"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1382,7 +1403,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-N8-2bL">
-                                        <rect key="frame" x="324" y="35.5" width="36" height="29"/>
+                                        <rect key="frame" x="326" y="35.5" width="34" height="29"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="14"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1499,7 +1520,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-rQ-cGd">
-                                        <rect key="frame" x="160" y="35.5" width="55.5" height="29.5"/>
+                                        <rect key="frame" x="161.5" y="36" width="52.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1563,7 +1584,7 @@
                                 <rect key="frame" x="0.0" y="90" width="375" height="710"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oz-CS-EPU">
-                                <rect key="frame" x="0.0" y="481" width="375" height="319"/>
+                                <rect key="frame" x="0.0" y="483" width="375" height="317"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Q-pF-M0b">
                                         <rect key="frame" x="338" y="12" width="20" height="20"/>
@@ -1661,7 +1682,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJP-hD-8tA">
-                                        <rect key="frame" x="20" y="243" width="335" height="51"/>
+                                        <rect key="frame" x="20" y="243" width="335" height="49"/>
                                         <string key="text">3436 S, Redwoor Road
 Salt Lake City, Utah
 84054</string>

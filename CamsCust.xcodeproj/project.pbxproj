@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54D9D57EAF450B5A2F75BD58 /* Pods_CamsCust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB230F1AC46008B6436F312 /* Pods_CamsCust.framework */; };
+		7314369A28576A6B00F316A5 /* ActionItemListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314369928576A6B00F316A5 /* ActionItemListController.swift */; };
 		73403280283E53E200A47487 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340327F283E53E200A47487 /* Utility.swift */; };
 		734B3CEF282BA79D00E6E1CC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CED282BA79D00E6E1CC /* MenuViewController.swift */; };
 		734B3CF2282BA7D600E6E1CC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CF1282BA7D600E6E1CC /* BaseViewController.swift */; };
@@ -93,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7314369928576A6B00F316A5 /* ActionItemListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItemListController.swift; sourceTree = "<group>"; };
 		7340327F283E53E200A47487 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		734B3CED282BA79D00E6E1CC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		734B3CF1282BA7D600E6E1CC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				7350B17E284E403D004DFBEF /* AssetsListController.swift */,
+				7314369928576A6B00F316A5 /* ActionItemListController.swift */,
 			);
 			path = "Asset list";
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				738C30B5282CE38200FB9688 /* AssetsListVC.swift in Sources */,
 				734B3CF2282BA7D600E6E1CC /* BaseViewController.swift in Sources */,
 				73D133BB283E19EC00E0B1F8 /* ARSupport.swift in Sources */,
+				7314369A28576A6B00F316A5 /* ActionItemListController.swift in Sources */,
 				73D133BC283E19EC00E0B1F8 /* usersCollectionViewCell.swift in Sources */,
 				735F476F28291B1500059909 /* LoginVC.swift in Sources */,
 				735F47C228292F4E00059909 /* ForgotPasswordVC.swift in Sources */,

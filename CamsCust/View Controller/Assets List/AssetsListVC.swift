@@ -32,7 +32,8 @@ class AssetsListVC: UIViewController {
     var actionItemParam : [String:Any] = [Parameter.AssetsParam.atm_id : ""]
     var objAssetsListModel : AssetsListModel?
     var objActionItemListController = ActionItemListController()
-    
+    var objActionItemListModel : ActionItemListModel?
+    var selectedStr = "assets"
     override func viewDidLoad() {
         super.viewDidLoad()
         objAssetsListController.delegate = self
@@ -56,7 +57,7 @@ class AssetsListVC: UIViewController {
         guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
         param[Parameter.AssetsParam.customer_id] = "\(customerID)"
         print(param)
-        
+        self.selectedStr = "assets"
         objAssetsListController.AssetList(Param: param)
     }
     
@@ -65,8 +66,9 @@ class AssetsListVC: UIViewController {
         self.lblActionItemsCount.textColor = UIColor.blue
         if self.objAssetsListModel?.result.atmList.count != 0{
             let atm_id = self.objAssetsListModel?.result.atmList[0].atmid
-            actionItemParam[Parameter.AssetsParam.atm_id] = atm_id
+            actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
             print(actionItemParam)
+            self.selectedStr = "actions"
             objActionItemListController.ActionItemsList(Param:actionItemParam)
         }
         
@@ -98,13 +100,26 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.backgroundColor = UIColor.clear
-        if let _ = self.objAssetsListModel {
-            cell.lblServiceName.text = self.objAssetsListModel?.result.atmList[indexPath.row].serviceName
-            cell.lblDesc.text = self.objAssetsListModel?.result.atmList[indexPath.row].atmDescription
-            cell.lblCode.text = self.objAssetsListModel?.result.atmList[indexPath.row].stateCode
-            cell.lblActionCount.text = "\(self.objAssetsListModel?.result.atmList[indexPath.row].actionCount ?? 0)"
-            self.cell.imgAsset.sd_setImage(with: URL(string:(self.objAssetsListModel?.result.atmList[indexPath.row].atmMainImage)!), placeholderImage: UIImage(named: "image 16"))
+        if self.selectedStr == "assets"{
+            if let _ = self.objAssetsListModel {
+                cell.lblActionCount.isHidden = false
+                cell.lblServiceName.text = self.objAssetsListModel?.result.atmList[indexPath.row].serviceName
+                cell.lblDesc.text = self.objAssetsListModel?.result.atmList[indexPath.row].atmDescription
+                cell.lblCode.text = self.objAssetsListModel?.result.atmList[indexPath.row].stateCode
+                cell.lblActionCount.text = "\(self.objAssetsListModel?.result.atmList[indexPath.row].actionCount ?? 0)"
+                self.cell.imgAsset.sd_setImage(with: URL(string:(self.objAssetsListModel?.result.atmList[indexPath.row].atmMainImage)!), placeholderImage: UIImage(named: "image 16"))
+            }
+        }else{
+            if let _ = self.objActionItemListModel {
+                cell.lblServiceName.text = self.objActionItemListModel?.result.actionList[indexPath.row].issueType
+                cell.lblDesc.text = self.objActionItemListModel?.result.actionList[indexPath.row].issueDescription
+                cell.lblCode.text = self.objActionItemListModel?.result.actionList[indexPath.row].issueSubType
+                cell.lblActionCount.isHidden = true
+               // cell.lblActionCount.text = "\(self.objActionItemListModel?.result.actionList[indexPath.row].actionCount ?? 0)"
+                self.cell.imgAsset.sd_setImage(with: URL(string:(self.objActionItemListModel?.result.actionList[indexPath.row].ImageURL)!), placeholderImage: UIImage(named: "image 16"))
+            }
         }
+       
         return cell
     }
     
@@ -116,11 +131,20 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let _ = self.objAssetsListModel {
-            return self.objAssetsListModel?.result.atmList.count ?? 0
+        if self.selectedStr == "assets"{
+            if let _ = self.objAssetsListModel {
+                return self.objAssetsListModel?.result.atmList.count ?? 0
+            }else{
+                return 0
+            }
         }else{
-            return 0
+            if let _ = self.objActionItemListModel {
+                return self.objActionItemListModel?.result.actionList.count ?? 0
+            }else{
+                return 0
+            }
         }
+       
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -145,12 +169,9 @@ extension AssetsListVC:AssetsListControllerDelegate{
                 self.lblActionItemsCount.text = "\(self.objAssetsListModel?.result.atmList[0].actionCount ?? 0) Action Items"
             }
             self.lblAssetCount.text = "\(self.objAssetsListModel?.result.atmList.count ?? 0) Assets"
-            
             self.assetsListTblVw.reloadData()
         })
-    }
-    
-    
+    }    
 }
 extension AssetsListVC:ActionItemListControllerDelegate{
     func ActionItemsListFailedResponse(error: String) {
@@ -164,7 +185,10 @@ extension AssetsListVC:ActionItemListControllerDelegate{
         DataManager.shared.hideLoader()
         print("----->",dataArr)
         DispatchQueue.main.async(execute: {() -> Void in
-                        
+            self.objActionItemListModel = ActionItemListModel(Dict: dataArr)
+            print("-----++++",self.objActionItemListModel?.result.actionList.count)
+            self.assetsListTblVw.reloadData()
+            
         })
     }
     

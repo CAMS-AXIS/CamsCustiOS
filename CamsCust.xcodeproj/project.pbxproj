@@ -50,6 +50,7 @@
 		7365EB4B2847A14F00C7EFF3 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7365EB4A2847A14F00C7EFF3 /* ForgotPasswordController.swift */; };
 		73708CD92840DEF6006B41AB /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73708CD82840DEF6006B41AB /* DashboardController.swift */; };
 		73708CDB284121D6006B41AB /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73708CDA284121D6006B41AB /* DashboardModel.swift */; };
+		7382710B2858AFF000607E03 /* ActionItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382710A2858AFF000607E03 /* ActionItemListModel.swift */; };
 		738C30B5282CE38200FB9688 /* AssetsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B4282CE38200FB9688 /* AssetsListVC.swift */; };
 		738C30B7282CE3A400FB9688 /* AssetsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B6282CE3A400FB9688 /* AssetsListCell.swift */; };
 		738C30BA282D342D00FB9688 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30B9282D342D00FB9688 /* FilterVC.swift */; };
@@ -142,6 +143,7 @@
 		7365EB4A2847A14F00C7EFF3 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		73708CD82840DEF6006B41AB /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		73708CDA284121D6006B41AB /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		7382710A2858AFF000607E03 /* ActionItemListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItemListModel.swift; sourceTree = "<group>"; };
 		738C30B4282CE38200FB9688 /* AssetsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListVC.swift; sourceTree = "<group>"; };
 		738C30B6282CE3A400FB9688 /* AssetsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListCell.swift; sourceTree = "<group>"; };
 		738C30B9282D342D00FB9688 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				736024D2283E7C4100DBB8B3 /* LoginModel.swift */,
 				73708CDA284121D6006B41AB /* DashboardModel.swift */,
 				7350B180284F4CE9004DFBEF /* AssetsListModel.swift */,
+				7382710A2858AFF000607E03 /* ActionItemListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				73EA09EC282EA3CE00CCAFA9 /* FilterSearchCell.swift in Sources */,
 				73D133B0283E146D00E0B1F8 /* DataManager.swift in Sources */,
 				73B44FAF28353C9C00A00515 /* ActionItemCell.swift in Sources */,
+				7382710B2858AFF000607E03 /* ActionItemListModel.swift in Sources */,
 				735F477528291B1500059909 /* CamsCust.xcdatamodeld in Sources */,
 				73708CDB284121D6006B41AB /* DashboardModel.swift in Sources */,
 				736024CE283E5C4800DBB8B3 /* ExtensionFile.swift in Sources */,

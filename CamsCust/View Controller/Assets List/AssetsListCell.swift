@@ -14,7 +14,9 @@ class AssetsListCell: UITableViewCell {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblActionCount: UILabel!
     
+    @IBOutlet weak var bttnActionCount: UIButton!
     @IBOutlet weak var lblCode: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -107,11 +107,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else if arrayMenuOptions[indexPath.row]["title"] == "LOGOUT"
         {
-            
+            Utility.alertWithMessage(title: "", message: "Are you sure? You want to logout?", buttonText: "Yes", viewController: self, completionHandler: {
+                let vc = self.storyboard?.instantiateViewController(identifier: "LoginVC") as! LoginVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            })
         }
         else
         {
-            
+            let vc = self.storyboard?.instantiateViewController(identifier: "MyProfileVC") as! MyProfileVC
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

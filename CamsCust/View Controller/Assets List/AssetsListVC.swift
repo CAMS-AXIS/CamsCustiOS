@@ -10,7 +10,7 @@ class AssetsListVC: UIViewController {
     @IBOutlet weak var lblAssetCount: UILabel!
     var cell : AssetsListCell = AssetsListCell()
     var objAssetsListController = AssetsListController()
-    var param :[String:Any] = [Parameter.AssetsParam.action_item_only:0,
+    var param :[String:Any] = [Parameter.AssetsParam.action_item_only:"",
                                Parameter.AssetsParam.answer_id:"",
                                Parameter.AssetsParam.atm_id : "",
                                Parameter.AssetsParam.atm_manu_id : "",
@@ -29,7 +29,7 @@ class AssetsListVC: UIViewController {
                                Parameter.AssetsParam.state_code : "",
                                Parameter.AssetsParam.sub_categories:""
     ]
-    var actionItemParam : [String:Any] = [Parameter.AssetsParam.atm_id : ""]
+    var actionItemParam : [String:Any] = [String:Any]()
     var objAssetsListModel : AssetsListModel?
     var objActionItemListController = ActionItemListController()
     var objActionItemListModel : ActionItemListModel?
@@ -42,8 +42,11 @@ class AssetsListVC: UIViewController {
         guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
         param[Parameter.AssetsParam.customer_id] = "\(customerID)"
         print(param)
-        
         objAssetsListController.AssetList(Param: param)
+        
+        
+       
+       
         setupTableView()
 
     }
@@ -59,19 +62,23 @@ class AssetsListVC: UIViewController {
         print(param)
         self.selectedStr = "assets"
         objAssetsListController.AssetList(Param: param)
+        
     }
     
     @IBAction func bttnActionItem(_ sender: Any) {
         self.lblAssetCount.textColor = UIColor.black
         self.lblActionItemsCount.textColor = UIColor.blue
         if self.objAssetsListModel?.result.atmList.count != 0{
-            let atm_id = self.objAssetsListModel?.result.atmList[0].atmid
-            actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
+          
+            
+            guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
+            // let atm_id = self.objAssetsListModel?.result.atmList[0].atmid
+           // actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
+            actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"
             print(actionItemParam)
             self.selectedStr = "actions"
             objActionItemListController.ActionItemsList(Param:actionItemParam)
         }
-        
     }
     
     
@@ -100,12 +107,19 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
         cell.layoutMargins = UIEdgeInsets.zero
         cell.preservesSuperviewLayoutMargins = false
         cell.backgroundColor = UIColor.clear
+        cell.bttnActionCount.addTarget(self, action: #selector(showActionItems), for: .touchUpInside)
+        cell.bttnActionCount.tag = indexPath.row
         if self.selectedStr == "assets"{
             if let _ = self.objAssetsListModel {
                 cell.lblActionCount.isHidden = false
-                cell.lblServiceName.text = self.objAssetsListModel?.result.atmList[indexPath.row].serviceName
+                cell.lblServiceName.text = self.objAssetsListModel?.result.atmList[indexPath.row].institutionAssignedID
                 cell.lblDesc.text = self.objAssetsListModel?.result.atmList[indexPath.row].atmDescription
                 cell.lblCode.text = self.objAssetsListModel?.result.atmList[indexPath.row].stateCode
+                if self.objAssetsListModel?.result.atmList[indexPath.row].actionCount == 0{
+                    cell.lblActionCount.backgroundColor = UIColor.blue
+                }else{
+                    cell.lblActionCount.backgroundColor = UIColor.red
+                }
                 cell.lblActionCount.text = "\(self.objAssetsListModel?.result.atmList[indexPath.row].actionCount ?? 0)"
                 self.cell.imgAsset.sd_setImage(with: URL(string:(self.objAssetsListModel?.result.atmList[indexPath.row].atmMainImage)!), placeholderImage: UIImage(named: "image 16"))
             }
@@ -119,7 +133,6 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
                 self.cell.imgAsset.sd_setImage(with: URL(string:(self.objActionItemListModel?.result.actionList[indexPath.row].ImageURL)!), placeholderImage: UIImage(named: "image 16"))
             }
         }
-       
         return cell
     }
     
@@ -127,7 +140,6 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
         let storyboard = UIStoryboard(name: "ProductDetails", bundle: Bundle.main)
         let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.AssetDetailsVC) as? AssetDetailsVC
         self.navigationController?.pushViewController(dashboardVC!, animated: false)
-       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,12 +156,24 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
                 return 0
             }
         }
-       
-    }
+     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
+    
+    @objc func showActionItems(sender:UIButton){
+        self.lblAssetCount.textColor = UIColor.black
+        self.lblActionItemsCount.textColor = UIColor.blue
+        
+        let atm_id = self.objAssetsListModel?.result.atmList[sender.tag].atmid
+        actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
+        print(actionItemParam)
+        self.selectedStr = "actions"
+        objActionItemListController.ActionItemsList(Param:actionItemParam)
+        
+    }
+    
 }
 extension AssetsListVC:AssetsListControllerDelegate{
     func AssetListFailedResponse(error: String) {
@@ -165,10 +189,15 @@ extension AssetsListVC:AssetsListControllerDelegate{
         DispatchQueue.main.async(execute: {() -> Void in
             self.objAssetsListModel = AssetsListModel(myResult: dataArr)
             print("=======++++",self.objAssetsListModel?.result.atmList.count)
-            if self.objAssetsListModel?.result.atmList.count != 0{
-                self.lblActionItemsCount.text = "\(self.objAssetsListModel?.result.atmList[0].actionCount ?? 0) Action Items"
-            }
+
             self.lblAssetCount.text = "\(self.objAssetsListModel?.result.atmList.count ?? 0) Assets"
+            guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
+            self.actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"
+            print(self.actionItemParam)
+           
+            self.objActionItemListController.ActionItemsList(Param:self.actionItemParam)
+            
+            
             self.assetsListTblVw.reloadData()
         })
     }    
@@ -187,6 +216,9 @@ extension AssetsListVC:ActionItemListControllerDelegate{
         DispatchQueue.main.async(execute: {() -> Void in
             self.objActionItemListModel = ActionItemListModel(Dict: dataArr)
             print("-----++++",self.objActionItemListModel?.result.actionList.count)
+            if self.objActionItemListModel?.result.actionList.count != 0{
+                self.lblActionItemsCount.text = "\(self.objActionItemListModel?.result.actionList.count ?? 0) Action Items"
+            }
             self.assetsListTblVw.reloadData()
             
         })

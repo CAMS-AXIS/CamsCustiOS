@@ -17,6 +17,7 @@ struct Constant {
         static let FORGOT_PASSWOORD_URL = "https://4x13tqxrhh.execute-api.us-east-1.amazonaws.com/prod/prod-forgot-password"
         static let ASSETS_LIST_URL = "https://f2p75h4j1j.execute-api.us-east-1.amazonaws.com/development/asset_list_customer"
         static let ACTIONS_ITEMS_LIST_URL = "https://6caq8xuul4.execute-api.us-east-1.amazonaws.com/development/asset-list-action-items"
+        static let MY_PROFILE_URL = "https://6uxjma7cc1.execute-api.us-east-1.amazonaws.com/development/profile-view"
     }
     struct CellIdentifier {
         static let DashboardCollectionCell = "DashboardCollectionCell"
@@ -31,6 +32,7 @@ struct Constant {
         static let ActionItemCell = "ActionItemCell"
         static let SelectSurveyCell = "SelectSurveyCell"
         static let ReviewSurveyCell = "ReviewSurveyCell"
+        static let MyProfileCell = "MyProfileCell"
     }
     struct StoryboardIdentifier {
         static let AssetsListVC = "AssetsListVC"

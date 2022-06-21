@@ -65,6 +65,11 @@
 		73B44FB42835488700A00515 /* SelectSurveyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B44FB32835488700A00515 /* SelectSurveyCell.swift */; };
 		73B52C2D2832A07900B95756 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B52C2C2832A07900B95756 /* ProductDetails.storyboard */; };
 		73B52C2F2832A0A800B95756 /* AssetDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B52C2E2832A0A800B95756 /* AssetDetailsVC.swift */; };
+		73C719D32861AED90008CD2C /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C719D22861AED90008CD2C /* MyProfileVC.swift */; };
+		73C719D52861B0570008CD2C /* MyProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C719D42861B0570008CD2C /* MyProfileCell.swift */; };
+		73C719D82861E64C0008CD2C /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C719D72861E64C0008CD2C /* MyProfileController.swift */; };
+		73C719DA2861F4F40008CD2C /* MyProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C719D92861F4F40008CD2C /* MyProfileModel.swift */; };
+		73C719DC2861FE390008CD2C /* MyProfileCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C719DB2861FE390008CD2C /* MyProfileCell2.swift */; };
 		73D133AD283E0FC800E0B1F8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D133AC283E0FC800E0B1F8 /* LoginController.swift */; };
 		73D133B0283E146D00E0B1F8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D133AF283E146D00E0B1F8 /* DataManager.swift */; };
 		73D133B3283E191F00E0B1F8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D133B2283E191F00E0B1F8 /* APIManager.swift */; };
@@ -158,6 +163,11 @@
 		73B44FB32835488700A00515 /* SelectSurveyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSurveyCell.swift; sourceTree = "<group>"; };
 		73B52C2C2832A07900B95756 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
 		73B52C2E2832A0A800B95756 /* AssetDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsVC.swift; sourceTree = "<group>"; };
+		73C719D22861AED90008CD2C /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		73C719D42861B0570008CD2C /* MyProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
+		73C719D72861E64C0008CD2C /* MyProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileController.swift; sourceTree = "<group>"; };
+		73C719D92861F4F40008CD2C /* MyProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileModel.swift; sourceTree = "<group>"; };
+		73C719DB2861FE390008CD2C /* MyProfileCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell2.swift; sourceTree = "<group>"; };
 		73D133AC283E0FC800E0B1F8 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		73D133AF283E146D00E0B1F8 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		73D133B2283E191F00E0B1F8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -317,6 +327,7 @@
 		735F479E28291B4200059909 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73C719D12861A68E0008CD2C /* My Profile */,
 				73966A0D283CCFCE006C5FD9 /* Assign Tickets */,
 				734F2BFD28362C5600C42DB1 /* Review Survey */,
 				73B44FB0283547F200A00515 /* Select Survey */,
@@ -358,6 +369,7 @@
 				73708CDA284121D6006B41AB /* DashboardModel.swift */,
 				7350B180284F4CE9004DFBEF /* AssetsListModel.swift */,
 				7382710A2858AFF000607E03 /* ActionItemListModel.swift */,
+				73C719D92861F4F40008CD2C /* MyProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -497,9 +509,28 @@
 			path = "Asset Details";
 			sourceTree = "<group>";
 		};
+		73C719D12861A68E0008CD2C /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				73C719D22861AED90008CD2C /* MyProfileVC.swift */,
+				73C719D42861B0570008CD2C /* MyProfileCell.swift */,
+				73C719DB2861FE390008CD2C /* MyProfileCell2.swift */,
+			);
+			path = "My Profile";
+			sourceTree = "<group>";
+		};
+		73C719D62861E6260008CD2C /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				73C719D72861E64C0008CD2C /* MyProfileController.swift */,
+			);
+			path = "My Profile";
+			sourceTree = "<group>";
+		};
 		73D133AA283E0FA300E0B1F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73C719D62861E6260008CD2C /* My Profile */,
 				7350B17D284E400E004DFBEF /* Asset list */,
 				7365EB492847A12E00C7EFF3 /* Forgot Password */,
 				73708CD72840DEB3006B41AB /* DashBoard */,
@@ -772,6 +803,7 @@
 				73966A0F283CCFFF006C5FD9 /* AssignTicketsVC.swift in Sources */,
 				735F47C42829313300059909 /* ForgotPasswordCell.swift in Sources */,
 				734F2BFF28362C8800C42DB1 /* ReviewSurveyVC.swift in Sources */,
+				73C719DC2861FE390008CD2C /* MyProfileCell2.swift in Sources */,
 				73EA09EC282EA3CE00CCAFA9 /* FilterSearchCell.swift in Sources */,
 				73D133B0283E146D00E0B1F8 /* DataManager.swift in Sources */,
 				73B44FAF28353C9C00A00515 /* ActionItemCell.swift in Sources */,
@@ -803,9 +835,13 @@
 				735F47A328291ED100059909 /* LoginCell.swift in Sources */,
 				73B44FAD2835377900A00515 /* AssetsCollectionCell.swift in Sources */,
 				736024CF283E5C4800DBB8B3 /* Extension.swift in Sources */,
+				73C719D82861E64C0008CD2C /* MyProfileController.swift in Sources */,
+				73C719DA2861F4F40008CD2C /* MyProfileModel.swift in Sources */,
+				73C719D52861B0570008CD2C /* MyProfileCell.swift in Sources */,
 				7350B17F284E403D004DFBEF /* AssetsListController.swift in Sources */,
 				736024D1283E5F0C00DBB8B3 /* Parameter.swift in Sources */,
 				73D133B3283E191F00E0B1F8 /* APIManager.swift in Sources */,
+				73C719D32861AED90008CD2C /* MyProfileVC.swift in Sources */,
 				73EA09EA282EA1F200CCAFA9 /* FilterSearchVC.swift in Sources */,
 				73B44FB42835488700A00515 /* SelectSurveyCell.swift in Sources */,
 				7365EB4B2847A14F00C7EFF3 /* ForgotPasswordController.swift in Sources */,

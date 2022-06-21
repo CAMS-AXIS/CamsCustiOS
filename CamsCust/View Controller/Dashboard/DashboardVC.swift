@@ -72,12 +72,12 @@ extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource,UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellIdentifier.DashboardCollectionCell, for: indexPath) as! DashboardCollectionCell
         if let _ = self.objDashboardModel?.data?.tiles{
-            collectionCell.chartView.progressAnimation(Float(self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0))
+            collectionCell.chartView.progressAnimation(Float(self.objDashboardModel?.data?.tiles[indexPath.row].kpiCount ?? 0))
         
             
             collectionCell.chartView.customStrokeColor = UIColor(hexString:(self.objDashboardModel?.data?.tiles[indexPath.row].colorCode)!).cgColor
             
-            let myDouble = self.objDashboardModel?.data?.tiles[indexPath.row].kpiPercentage ?? 0.0
+            let myDouble = Double(self.objDashboardModel?.data?.tiles[indexPath.row].kpiCount ?? 0)
             collectionCell.label.textColor = UIColor.black
             collectionCell.label.font = UIFont(name: "Inter-Bold", size: 15.0)
             collectionCell.label.numberOfLines = 0

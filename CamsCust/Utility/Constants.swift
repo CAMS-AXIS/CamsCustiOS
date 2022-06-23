@@ -18,6 +18,8 @@ struct Constant {
         static let ASSETS_LIST_URL = "https://f2p75h4j1j.execute-api.us-east-1.amazonaws.com/development/asset_list_customer"
         static let ACTIONS_ITEMS_LIST_URL = "https://6caq8xuul4.execute-api.us-east-1.amazonaws.com/development/asset-list-action-items"
         static let MY_PROFILE_URL = "https://6uxjma7cc1.execute-api.us-east-1.amazonaws.com/development/profile-view"
+        
+        static let SWITCH_ACCOUNT_URL = "https://m3gv0ee1fb.execute-api.us-east-1.amazonaws.com/development/bank-list"
     }
     struct CellIdentifier {
         static let DashboardCollectionCell = "DashboardCollectionCell"
@@ -33,6 +35,7 @@ struct Constant {
         static let SelectSurveyCell = "SelectSurveyCell"
         static let ReviewSurveyCell = "ReviewSurveyCell"
         static let MyProfileCell = "MyProfileCell"
+        static let MyProfileCell2 = "MyProfileCell2"
     }
     struct StoryboardIdentifier {
         static let AssetsListVC = "AssetsListVC"
@@ -68,13 +71,20 @@ struct Constant {
         static let Username_Error                       = "Please enter your Name"
         static let Password_Error                       = "Please enter password"
         static let PasswordCount_Error                  = "Password should be minimum of 6 characters"
+        static let Current_Password_Error               = "Please enter your current password"
+        static let New_Password_Error                   = "Please enter your new password"
+        static let Confirm_Password_Error               = "Please enter your confirm pasword"
+        static let Current_password_Error               = "Please enter your current password correctly"
+        static let Same_Password_Error                  = "New password and confirm password should be same"
+
     }
     struct user_defaults_value
     {
         static let customerID                                    = "customer_id"
         static let username                                      = "username"
         static let customerLogo                                  = "customer_logo"
-       
+        static let password                                      = "password"
+        static let user_id                                       = "user_id"
         
     }
 }

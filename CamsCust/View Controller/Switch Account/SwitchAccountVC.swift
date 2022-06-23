@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SwitchAccountVC: BaseViewController {
     @IBOutlet weak var accountTblVw: UITableView!
     var cell : SwitchAccountCell = SwitchAccountCell()
     var selectedIndex = -1
+    var objSwitchAccountController = SwitchAccountController()
+    var param : [String:Any] = ["user_id":""]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        objSwitchAccountController.delegate = self
+        guard let user_id = UserDefaults.standard.value(forKey: Constant.user_defaults_value.user_id) as? Int else{return}
+        param["user_id"] = user_id
+        objSwitchAccountController.getAccountList(Param:param)
     }
     
     @IBAction func bttnBack(_ sender: Any) {
@@ -59,4 +66,23 @@ extension SwitchAccountVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
+}
+extension SwitchAccountVC:SwitchAccountControllerDelegate{
+    func getAccountListFailedResponse(error: String) {
+        DataManager.shared.hideLoader()
+        DispatchQueue.main.async(execute: {() -> Void in
+            Utility.alertWithOkMessage(title: Constant.variableText.appName, message: error, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {})
+        })
+    }
+    
+    func getAccountListSuccessResponse(dataArr: JSON, msg: String) {
+        DataManager.shared.hideLoader()
+        print("----->",dataArr)
+        DispatchQueue.main.async(execute: {() -> Void in
+            
+            self.accountTblVw.reloadData()
+        })
+    }
+    
+    
 }

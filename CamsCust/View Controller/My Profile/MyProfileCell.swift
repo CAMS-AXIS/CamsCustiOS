@@ -8,11 +8,13 @@
 import UIKit
 
 class MyProfileCell: UITableViewCell {
-    @IBOutlet weak var bttnChangePassword: UIButton!
     
+    @IBOutlet weak var bttnChangePassword: UIButton!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtUserName: UITextField!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1836,7 +1836,7 @@ Salt Lake City, Utah
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lri-3C-2Nu">
+                                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lri-3C-2Nu">
                                                                     <rect key="frame" x="10" y="25.5" width="305" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="nq7-pg-1x7"/>
@@ -1865,7 +1865,7 @@ Salt Lake City, Utah
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-Op-myu">
+                                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZqB-Op-myu">
                                                                     <rect key="frame" x="10" y="26" width="305" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="Vqe-BS-sZu"/>
@@ -1894,13 +1894,13 @@ Salt Lake City, Utah
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-5s-VDd">
+                                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-5s-VDd">
                                                                     <rect key="frame" x="10" y="26" width="305" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="0X3-c5-sbP"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                 </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1959,7 +1959,7 @@ Salt Lake City, Utah
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVk-bf-aEC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="314"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="328"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1a-K0-1b8">
                                                             <rect key="frame" x="15" y="10" width="325" height="81"/>
@@ -1970,7 +1970,7 @@ Salt Lake City, Utah
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4g-Mk-tWU">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="**********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4g-Mk-tWU">
                                                                     <rect key="frame" x="10" y="26" width="305" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="Vr0-KM-oli"/>
@@ -1999,7 +1999,7 @@ Salt Lake City, Utah
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-yP-jgv">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="**************" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-yP-jgv">
                                                                     <rect key="frame" x="10" y="26" width="305" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="aoz-9H-R5g"/>
@@ -2028,7 +2028,7 @@ Salt Lake City, Utah
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-FY-Q65">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="*************" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-FY-Q65">
                                                                     <rect key="frame" x="10" y="26" width="305" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="eGE-83-kTg"/>
@@ -2049,9 +2049,16 @@ Salt Lake City, Utah
                                                             </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-50-qKH">
-                                                            <rect key="frame" x="25" y="273" width="35" height="31"/>
-                                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
-                                                            <state key="normal" title="Save"/>
+                                                            <rect key="frame" x="25" y="273" width="100" height="45"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="2Ia-KL-7HO"/>
+                                                                <constraint firstAttribute="width" constant="100" id="aMb-A4-8Tp"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
+                                                            <state key="normal" title="Save">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2078,6 +2085,12 @@ Salt Lake City, Utah
                                                 <constraint firstAttribute="trailing" secondItem="pVk-bf-aEC" secondAttribute="trailing" id="oEi-pq-vN9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bttnSave" destination="Sb8-50-qKH" id="FuA-5c-Uyo"/>
+                                            <outlet property="txtConfirmPass" destination="Y4E-FY-Q65" id="XQt-td-DeP"/>
+                                            <outlet property="txtNewPass" destination="TGn-yP-jgv" id="cnS-bn-tTJ"/>
+                                            <outlet property="txtOldPass" destination="X4g-Mk-tWU" id="r5S-hj-HCE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

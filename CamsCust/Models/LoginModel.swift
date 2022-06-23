@@ -32,6 +32,7 @@ class LoginData: NSObject {
     let roleID : String?
     let role : String?
     let username: String?
+    let user_id : String?
     
     
     init(MyData:JSON) {
@@ -40,6 +41,7 @@ class LoginData: NSObject {
         self.roleID = MyData["role_id"].stringValue
         self.role = MyData["role"].stringValue
         self.username = MyData["username"].stringValue
+        self.user_id = MyData["user_id"].stringValue
     }
   
 }

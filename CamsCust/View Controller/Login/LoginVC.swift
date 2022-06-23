@@ -25,6 +25,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         setupTableView()
         objLoginController.delegate = self
+        //self.loginCell.txtPassword.text = "123456"
     }
     func setupTableView(){
         self.loginTblVw.delegate = self
@@ -113,6 +114,10 @@ extension LoginVC:LoginControllerDelegate{
                     {
                         UserDefaults.standard.set(customerID, forKey: Constant.user_defaults_value.customerID)
                     }
+                    if let user_id = self.objLoginModel?.data?.user_id
+                    {
+                        UserDefaults.standard.set(user_id, forKey: Constant.user_defaults_value.user_id)
+                    }
                     if let username = self.objLoginModel?.data?.username
                     {
                         UserDefaults.standard.set(username, forKey: Constant.user_defaults_value.username)
@@ -121,6 +126,8 @@ extension LoginVC:LoginControllerDelegate{
                         UserDefaults.standard.set(customerLogo, forKey: Constant.user_defaults_value.customerLogo)
                     }
                     
+                   
+                    UserDefaults.standard.set(self.loginCell.txtPassword.text, forKey: Constant.user_defaults_value.password)
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.DashboardVC) as? DashboardVC

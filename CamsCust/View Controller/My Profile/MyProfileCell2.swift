@@ -8,7 +8,15 @@
 import UIKit
 
 class MyProfileCell2: UITableViewCell {
-
+    @IBOutlet weak var txtOldPass: UITextField!
+    
+    @IBOutlet weak var txtNewPass: UITextField!
+    
+    @IBOutlet weak var bttnSave: UIButton!
+    @IBOutlet weak var txtConfirmPass: UITextField!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

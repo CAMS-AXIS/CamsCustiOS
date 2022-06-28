@@ -22,10 +22,16 @@ class DashboardVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+       
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         objDashboardController.delegate = self
         addSlideMenuButton(btn: bttnMenu)
         setupCollectionVw()
-        guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
         
         guard let username = UserDefaults.standard.value(forKey: Constant.user_defaults_value.username) as? String else{return}
 
@@ -34,10 +40,13 @@ class DashboardVC: BaseViewController {
 
         
         self.lblName.text = "Welcome, \(username)"
+        
+        guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
         param[Parameter.DashboardParam.customer_id] = "\(customerID)"
         print(param)
         objDashboardController.DashboardDetails(Param: param)
     }
+    
     func setupCollectionVw(){
         myCollectionView.dataSource = self
         myCollectionView.delegate = self

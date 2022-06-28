@@ -11,6 +11,7 @@
 		7314369A28576A6B00F316A5 /* ActionItemListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314369928576A6B00F316A5 /* ActionItemListController.swift */; };
 		7337BD1328649F6000E40939 /* SwitchAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7337BD1228649F6000E40939 /* SwitchAccountController.swift */; };
 		73403280283E53E200A47487 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340327F283E53E200A47487 /* Utility.swift */; };
+		7349A85328697FCC006D3418 /* SwitchAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349A85228697FCC006D3418 /* SwitchAccountModel.swift */; };
 		734B3CEF282BA79D00E6E1CC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CED282BA79D00E6E1CC /* MenuViewController.swift */; };
 		734B3CF2282BA7D600E6E1CC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CF1282BA7D600E6E1CC /* BaseViewController.swift */; };
 		734B3CF5282BE97500E6E1CC /* SwitchAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B3CF4282BE97500E6E1CC /* SwitchAccountVC.swift */; };
@@ -20,6 +21,7 @@
 		7350B181284F4CE9004DFBEF /* AssetsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350B180284F4CE9004DFBEF /* AssetsListModel.swift */; };
 		735635BA282A53E4007B35B9 /* DashboardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735635B9282A53E4007B35B9 /* DashboardCollectionCell.swift */; };
 		735635BD282A86E3007B35B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735635BC282A86E3007B35B9 /* Constants.swift */; };
+		735D98C5286B516500B67B89 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735D98C4286B516500B67B89 /* FilterController.swift */; };
 		735F476B28291B1500059909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F476A28291B1500059909 /* AppDelegate.swift */; };
 		735F476F28291B1500059909 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F476E28291B1500059909 /* LoginVC.swift */; };
 		735F477228291B1500059909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735F477028291B1500059909 /* Main.storyboard */; };
@@ -104,6 +106,7 @@
 		7314369928576A6B00F316A5 /* ActionItemListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItemListController.swift; sourceTree = "<group>"; };
 		7337BD1228649F6000E40939 /* SwitchAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchAccountController.swift; sourceTree = "<group>"; };
 		7340327F283E53E200A47487 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		7349A85228697FCC006D3418 /* SwitchAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchAccountModel.swift; sourceTree = "<group>"; };
 		734B3CED282BA79D00E6E1CC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		734B3CF1282BA7D600E6E1CC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		734B3CF4282BE97500E6E1CC /* SwitchAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchAccountVC.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		7350B180284F4CE9004DFBEF /* AssetsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListModel.swift; sourceTree = "<group>"; };
 		735635B9282A53E4007B35B9 /* DashboardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionCell.swift; sourceTree = "<group>"; };
 		735635BC282A86E3007B35B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		735D98C4286B516500B67B89 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		735F476728291B1500059909 /* CamsCust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamsCust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		735F476A28291B1500059909 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		735F476E28291B1500059909 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -265,6 +269,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		735D98C3286B37EA00B67B89 /*  Filter Controller */ = {
+			isa = PBXGroup;
+			children = (
+				735D98C4286B516500B67B89 /* FilterController.swift */,
+			);
+			path = " Filter Controller";
+			sourceTree = "<group>";
+		};
 		735F475E28291B1500059909 = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +392,7 @@
 				7350B180284F4CE9004DFBEF /* AssetsListModel.swift */,
 				7382710A2858AFF000607E03 /* ActionItemListModel.swift */,
 				73C719D92861F4F40008CD2C /* MyProfileModel.swift */,
+				7349A85228697FCC006D3418 /* SwitchAccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -540,6 +553,7 @@
 		73D133AA283E0FA300E0B1F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				735D98C3286B37EA00B67B89 /*  Filter Controller */,
 				7337BD1128649F3A00E40939 /* Switch Account */,
 				73C719D62861E6260008CD2C /* My Profile */,
 				7350B17D284E400E004DFBEF /* Asset list */,
@@ -815,8 +829,10 @@
 				735F47C42829313300059909 /* ForgotPasswordCell.swift in Sources */,
 				734F2BFF28362C8800C42DB1 /* ReviewSurveyVC.swift in Sources */,
 				73C719DC2861FE390008CD2C /* MyProfileCell2.swift in Sources */,
+				735D98C5286B516500B67B89 /* FilterController.swift in Sources */,
 				73EA09EC282EA3CE00CCAFA9 /* FilterSearchCell.swift in Sources */,
 				73D133B0283E146D00E0B1F8 /* DataManager.swift in Sources */,
+				7349A85328697FCC006D3418 /* SwitchAccountModel.swift in Sources */,
 				73B44FAF28353C9C00A00515 /* ActionItemCell.swift in Sources */,
 				7382710B2858AFF000607E03 /* ActionItemListModel.swift in Sources */,
 				735F477528291B1500059909 /* CamsCust.xcdatamodeld in Sources */,

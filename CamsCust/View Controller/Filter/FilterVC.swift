@@ -2,17 +2,32 @@
 //  CamsCust
 //  Created by Dipika Ghosh on 12/05/22.
 import UIKit
-
+import SwiftyJSON
 class FilterVC: UIViewController {
     @IBOutlet weak var filterTblVw: UITableView!
     
     var cell1 : FilterCell = FilterCell()
     var cell2 : FilterCell2 = FilterCell2()
+    var objFilterController = FilterController()
     
+    var filterArr = ["Install Type","Survey Name","Image Name","Questions","Answer","State","City","Manufacturer","Model"]
+    var param : [String:Any] = ["customer_id":"",
+                                "service_id":"",
+                                "question_id":"",
+                                "state_code":"",
+                                "manufacturer_id":""
+    
+    
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-
+        objFilterController.delegate = self
+        guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
+        param["customer_id"] = "\(customerID)"
+         
+        objFilterController.getFilterList(Param: param)
+        
     }
     
     @IBAction func bttnCancel(_ sender: Any) {
@@ -42,6 +57,7 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
             cell2.layoutMargins = UIEdgeInsets.zero
             cell2.preservesSuperviewLayoutMargins = false
             cell2.backgroundColor = UIColor.clear
+            cell2.lblTitle.text = filterArr[indexPath.row]
             return cell2
         }
     }
@@ -54,13 +70,33 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
-            return 2
+            return 1
         }else{
-            return 8
+            return filterArr.count
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2;
     }
+}
+extension FilterVC : FilterControllerDelegate{
+    func FilterListFailedResponse(error: String) {
+        DataManager.shared.hideLoader()
+        DispatchQueue.main.async(execute: {() -> Void in
+            Utility.alertWithOkMessage(title: Constant.variableText.appName, message: error, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {})
+        })
+    }
+    
+    func FilterListSuccessResponse(dataArr: JSON, msg: String) {
+        DataManager.shared.hideLoader()
+        print("filter data ----->",dataArr)
+        DispatchQueue.main.async(execute: {() -> Void in
+           
+            self.filterTblVw.reloadData()
+            
+        })
+    }
+    
+    
 }

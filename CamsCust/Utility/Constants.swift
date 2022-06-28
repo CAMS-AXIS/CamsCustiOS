@@ -20,7 +20,9 @@ struct Constant {
         static let MY_PROFILE_URL = "https://6uxjma7cc1.execute-api.us-east-1.amazonaws.com/development/profile-view"
         
         static let SWITCH_ACCOUNT_URL = "https://m3gv0ee1fb.execute-api.us-east-1.amazonaws.com/development/bank-list"
-    }
+        static let FILTER_LIST_URL = "https://kfnvcq6f56.execute-api.us-east-1.amazonaws.com/prod/prod_customer_asset_list_dropdown"
+        
+}
     struct CellIdentifier {
         static let DashboardCollectionCell = "DashboardCollectionCell"
         static let LoginCell = "LoginCell"

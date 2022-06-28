@@ -15,7 +15,7 @@
         <array key="Inter-Medium.ttf">
             <string>Inter-Medium</string>
         </array>
-        <array key="Inter-VariableFont_slnt,wght.ttf">
+        <array key="Inter-Regular.ttf">
             <string>Inter-Regular</string>
         </array>
     </customFonts>
@@ -1825,7 +1825,7 @@ Salt Lake City, Utah
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bx4-me-KBb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="313.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="227.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgT-qV-1VF">
                                                             <rect key="frame" x="15" y="10" width="325" height="80.5"/>
@@ -1885,8 +1885,8 @@ Salt Lake City, Utah
                                                                 <constraint firstAttribute="trailing" secondItem="K1J-W9-ZcJ" secondAttribute="trailing" constant="10" id="yjj-OM-XYz"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbT-vu-gEx">
-                                                            <rect key="frame" x="15" y="181.5" width="325" height="81"/>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbT-vu-gEx">
+                                                            <rect key="frame" x="15" y="186.5" width="325" height="81"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71Y-nd-iw1">
                                                                     <rect key="frame" x="10" y="0.0" width="305" height="21"/>
@@ -1915,14 +1915,14 @@ Salt Lake City, Utah
                                                             </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-U4-ecn">
-                                                            <rect key="frame" x="25" y="272.5" width="130" height="31"/>
+                                                            <rect key="frame" x="25" y="186.5" width="130" height="31"/>
                                                             <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                                             <state key="normal" title="Change Password"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="AbT-vu-gEx" firstAttribute="top" secondItem="5LR-AW-ppZ" secondAttribute="bottom" constant="5" id="1Uw-zk-2gg"/>
+                                                        <constraint firstItem="AbT-vu-gEx" firstAttribute="top" secondItem="5LR-AW-ppZ" secondAttribute="bottom" constant="10" id="1Uw-zk-2gg"/>
                                                         <constraint firstItem="qgT-qV-1VF" firstAttribute="top" secondItem="Bx4-me-KBb" secondAttribute="top" constant="10" id="B5m-Le-mgt"/>
                                                         <constraint firstItem="AbT-vu-gEx" firstAttribute="leading" secondItem="5LR-AW-ppZ" secondAttribute="leading" id="PH8-te-dpn"/>
                                                         <constraint firstItem="5LR-AW-ppZ" firstAttribute="trailing" secondItem="qgT-qV-1VF" secondAttribute="trailing" id="WVn-7V-f1H"/>
@@ -1930,9 +1930,9 @@ Salt Lake City, Utah
                                                         <constraint firstAttribute="bottom" secondItem="dxj-U4-ecn" secondAttribute="bottom" constant="10" id="X3U-96-8CZ"/>
                                                         <constraint firstItem="qgT-qV-1VF" firstAttribute="leading" secondItem="Bx4-me-KBb" secondAttribute="leading" constant="15" id="fZO-lV-WVg"/>
                                                         <constraint firstAttribute="trailing" secondItem="qgT-qV-1VF" secondAttribute="trailing" constant="15" id="hou-Yr-5MQ"/>
-                                                        <constraint firstItem="dxj-U4-ecn" firstAttribute="top" secondItem="AbT-vu-gEx" secondAttribute="bottom" constant="10" id="iqw-tC-g3u"/>
                                                         <constraint firstItem="dxj-U4-ecn" firstAttribute="leading" secondItem="AbT-vu-gEx" secondAttribute="leading" constant="10" id="sFA-Pk-fDo"/>
                                                         <constraint firstItem="AbT-vu-gEx" firstAttribute="trailing" secondItem="5LR-AW-ppZ" secondAttribute="trailing" id="tUE-9f-6vq"/>
+                                                        <constraint firstItem="dxj-U4-ecn" firstAttribute="top" secondItem="AbT-vu-gEx" secondAttribute="top" id="vhV-Ng-Vk5"/>
                                                         <constraint firstItem="5LR-AW-ppZ" firstAttribute="leading" secondItem="qgT-qV-1VF" secondAttribute="leading" id="wiJ-vF-nye"/>
                                                     </constraints>
                                                 </view>

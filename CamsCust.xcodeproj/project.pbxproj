@@ -80,6 +80,7 @@
 		73D133BA283E19EC00E0B1F8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D133B6283E19EC00E0B1F8 /* Reachability.swift */; };
 		73D133BB283E19EC00E0B1F8 /* ARSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D133B7283E19EC00E0B1F8 /* ARSupport.swift */; };
 		73D133BC283E19EC00E0B1F8 /* usersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D133B8283E19EC00E0B1F8 /* usersCollectionViewCell.swift */; };
+		73D260E3286C3E4100DA46CA /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D260E2286C3E4100DA46CA /* FilterModel.swift */; };
 		73EA09EA282EA1F200CCAFA9 /* FilterSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA09E9282EA1F200CCAFA9 /* FilterSearchVC.swift */; };
 		73EA09EC282EA3CE00CCAFA9 /* FilterSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA09EB282EA3CE00CCAFA9 /* FilterSearchCell.swift */; };
 		73EA09EF282EA87E00CCAFA9 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA09EE282EA87E00CCAFA9 /* MapVC.swift */; };
@@ -181,6 +182,7 @@
 		73D133B6283E19EC00E0B1F8 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		73D133B7283E19EC00E0B1F8 /* ARSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSupport.swift; sourceTree = "<group>"; };
 		73D133B8283E19EC00E0B1F8 /* usersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usersCollectionViewCell.swift; sourceTree = "<group>"; };
+		73D260E2286C3E4100DA46CA /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		73EA09E9282EA1F200CCAFA9 /* FilterSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchVC.swift; sourceTree = "<group>"; };
 		73EA09EB282EA3CE00CCAFA9 /* FilterSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchCell.swift; sourceTree = "<group>"; };
 		73EA09EE282EA87E00CCAFA9 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				7382710A2858AFF000607E03 /* ActionItemListModel.swift */,
 				73C719D92861F4F40008CD2C /* MyProfileModel.swift */,
 				7349A85228697FCC006D3418 /* SwitchAccountModel.swift */,
+				73D260E2286C3E4100DA46CA /* FilterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				7365EB4B2847A14F00C7EFF3 /* ForgotPasswordController.swift in Sources */,
 				735F47C72829493000059909 /* DashboardVC.swift in Sources */,
 				73966A0C283CC8C5006C5FD9 /* ReviewSurveyCell.swift in Sources */,
+				73D260E3286C3E4100DA46CA /* FilterModel.swift in Sources */,
 				735F476B28291B1500059909 /* AppDelegate.swift in Sources */,
 				735635BA282A53E4007B35B9 /* DashboardCollectionCell.swift in Sources */,
 			);

@@ -14,12 +14,30 @@ class DataManager: NSObject {
     let ACCEPTABLE_CHARACTERS_PHONE = "0123456789()-+ "
     let ACCEPTABLE_CHARACTERS_COMMON = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,.- "
     let ACCEPTABLE_CHARACTERS_CARD = "0123456789 "
-    
-    
     let ACCEPTABLE_CHARACTERS_VERIFY = "0123456789"
-
     let ACCEPTABLE_CHARACTERS_ZIPCODE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 "
    
+   var search_true = ""
+    var param :[String:Any] = [Parameter.AssetsParam.action_item_only:"",
+                               Parameter.AssetsParam.answer_id:"",
+                               Parameter.AssetsParam.atm_id : "",
+                               Parameter.AssetsParam.atm_manu_id : "",
+                               Parameter.AssetsParam.atm_model_id:"",
+                               Parameter.AssetsParam.category:"",
+                               Parameter.AssetsParam.city:"",
+                               Parameter.AssetsParam.customer_id:"",
+                               Parameter.AssetsParam.end_date:"",
+                               Parameter.AssetsParam.image_id:"",
+                               Parameter.AssetsParam.install_type:"",
+                               Parameter.AssetsParam.question_id:"",
+                               Parameter.AssetsParam.service_id:"",
+                               Parameter.AssetsParam.sort_by_action_items:"",
+                               Parameter.AssetsParam.sort_by_asset_id:"",
+                               Parameter.AssetsParam.start_date:"",
+                               Parameter.AssetsParam.state_code : "",
+                               Parameter.AssetsParam.sub_categories:""
+    ]
+    
     
     public func showLoader() {
         SVProgressHUD.setDefaultMaskType(.black)

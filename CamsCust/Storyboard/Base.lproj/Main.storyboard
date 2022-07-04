@@ -1492,6 +1492,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imgCheck" destination="Y3S-RK-bKQ" id="ug8-NO-prb"/>
+                                            <outlet property="lblTitle" destination="d8v-oN-Uaz" id="Mtm-B8-wTw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

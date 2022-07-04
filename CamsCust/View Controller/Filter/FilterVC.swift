@@ -9,15 +9,15 @@ class FilterVC: UIViewController {
     var cell1 : FilterCell = FilterCell()
     var cell2 : FilterCell2 = FilterCell2()
     var objFilterController = FilterController()
+    var objFilterModel : FilterModel?
     
     var filterArr = ["Install Type","Survey Name","Image Name","Questions","Answer","State","City","Manufacturer","Model"]
+    
     var param : [String:Any] = ["customer_id":"",
                                 "service_id":"",
                                 "question_id":"",
                                 "state_code":"",
                                 "manufacturer_id":""
-    
-    
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,12 @@ class FilterVC: UIViewController {
     }
     
     @IBAction func bttnCancel(_ sender: Any) {
+        DataManager.shared.search_true = "yes"
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func bttnDone(_ sender: Any) {
+        DataManager.shared.search_true = "yes"
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupTableView(){
@@ -65,6 +68,30 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.FilterSearchVC) as? FilterSearchVC
+        
+        if filterArr[indexPath.row] == "Install Type"{
+            dashboardVC?.selectedCat = filterArr[indexPath.row]
+        }
+        else if filterArr[indexPath.row] == "Survey Name"{
+            dashboardVC?.selectedCat = filterArr[indexPath.row]
+            dashboardVC?.objFilterModel = self.objFilterModel
+        }
+        else if filterArr[indexPath.row] == "Image Name"{
+            dashboardVC?.selectedCat = filterArr[indexPath.row]
+            dashboardVC?.objFilterModel = self.objFilterModel
+        }
+        
+        else if filterArr[indexPath.row] == "State"{
+            dashboardVC?.selectedCat = filterArr[indexPath.row]
+            dashboardVC?.objFilterModel = self.objFilterModel
+        }
+        else if filterArr[indexPath.row] == "Manufacturer"{
+            dashboardVC?.selectedCat = filterArr[indexPath.row]
+            dashboardVC?.objFilterModel = self.objFilterModel
+        }
+        
+        
+        
         self.navigationController?.pushViewController(dashboardVC!, animated: false)
     }
     
@@ -92,7 +119,7 @@ extension FilterVC : FilterControllerDelegate{
         DataManager.shared.hideLoader()
         print("filter data ----->",dataArr)
         DispatchQueue.main.async(execute: {() -> Void in
-           
+            self.objFilterModel = FilterModel(MyData: dataArr)
             self.filterTblVw.reloadData()
             
         })

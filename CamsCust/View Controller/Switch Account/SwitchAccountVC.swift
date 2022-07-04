@@ -38,9 +38,10 @@ class SwitchAccountVC: BaseViewController {
 extension SwitchAccountVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.SwitchAccountCell) as! SwitchAccountCell
-        cell.layoutMargins = UIEdgeInsets.zero
-        cell.preservesSuperviewLayoutMargins = false
-        cell.backgroundColor = UIColor.clear
+       // cell.layoutMargins = UIEdgeInsets.zero
+        //cell.preservesSuperviewLayoutMargins = false
+        //cell.backgroundColor = UIColor.clear
+        cell.selectionStyle = .none
         
         if let _ = self.objSwitchAccountModel{
             cell.lblTitle.text = self.objSwitchAccountModel?.data[indexPath.row].customerName
@@ -60,13 +61,11 @@ extension SwitchAccountVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedIndex = indexPath.row
-        self.accountTblVw.reloadData()
-        
         let refreshAlert = UIAlertController(title: "", message: "Do you want to switch your Account?", preferredStyle: UIAlertController.Style.alert)
-
         refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
               print("Handle Ok logic here")
+            self.selectedIndex = indexPath.row
+            self.accountTblVw.reloadData()
             if let _ = self.objSwitchAccountModel{
                 if let customerID = self.objSwitchAccountModel?.data[indexPath.row].customerID
                 {
@@ -92,15 +91,6 @@ extension SwitchAccountVC:UITableViewDelegate,UITableViewDataSource{
         }))
 
         present(refreshAlert, animated: true, completion: nil)
-        
-        
-        
-        
-        
-        
-        
-        
-        
        
     }
     

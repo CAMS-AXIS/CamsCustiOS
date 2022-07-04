@@ -10,25 +10,7 @@ class AssetsListVC: UIViewController {
     @IBOutlet weak var lblAssetCount: UILabel!
     var cell : AssetsListCell = AssetsListCell()
     var objAssetsListController = AssetsListController()
-    var param :[String:Any] = [Parameter.AssetsParam.action_item_only:"",
-                               Parameter.AssetsParam.answer_id:"",
-                               Parameter.AssetsParam.atm_id : "",
-                               Parameter.AssetsParam.atm_manu_id : "",
-                               Parameter.AssetsParam.atm_model_id:"",
-                               Parameter.AssetsParam.category:"",
-                               Parameter.AssetsParam.city:"",
-                               Parameter.AssetsParam.customer_id:"",
-                               Parameter.AssetsParam.end_date:"",
-                               Parameter.AssetsParam.image_id:"",
-                               Parameter.AssetsParam.install_type:"",
-                               Parameter.AssetsParam.question_id:"",
-                               Parameter.AssetsParam.service_id:"",
-                               Parameter.AssetsParam.sort_by_action_items:"",
-                               Parameter.AssetsParam.sort_by_asset_id:"",
-                               Parameter.AssetsParam.start_date:"",
-                               Parameter.AssetsParam.state_code : "",
-                               Parameter.AssetsParam.sub_categories:""
-    ]
+   
     var actionItemParam : [String:Any] = [String:Any]()
     var objAssetsListModel : AssetsListModel?
     var objActionItemListController = ActionItemListController()
@@ -40,17 +22,23 @@ class AssetsListVC: UIViewController {
         objActionItemListController.delegate = self
         self.lblAssetCount.textColor = UIColor.blue
         guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
-        param[Parameter.AssetsParam.customer_id] = "\(customerID)"
-        print(param)
-        objAssetsListController.AssetList(Param: param)
+        DataManager.shared.param[Parameter.AssetsParam.customer_id] = "\(customerID)"
+        print(DataManager.shared.param)
+        objAssetsListController.AssetList(Param: DataManager.shared.param)
         
-        
-       
-       
         setupTableView()
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if DataManager.shared.search_true == "yes"{
+            print("",DataManager.shared.param)
+            objAssetsListController.AssetList(Param: DataManager.shared.param)
+        }
+       
+    }
     @IBAction func bttnBack(_ sender: Any) {
+        DataManager.shared.search_true = "no"
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func bttnAssetAction(_ sender: Any) {
@@ -58,19 +46,18 @@ class AssetsListVC: UIViewController {
         self.lblActionItemsCount.textColor = UIColor.black
         
         guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
-        param[Parameter.AssetsParam.customer_id] = "\(customerID)"
-        print(param)
+        DataManager.shared.param[Parameter.AssetsParam.customer_id] = "\(customerID)"
+        print(DataManager.shared.param)
         self.selectedStr = "assets"
-        objAssetsListController.AssetList(Param: param)
+        objAssetsListController.AssetList(Param: DataManager.shared.param)
         
     }
+    
     
     @IBAction func bttnActionItem(_ sender: Any) {
         self.lblAssetCount.textColor = UIColor.black
         self.lblActionItemsCount.textColor = UIColor.blue
         if self.objAssetsListModel?.result.atmList.count != 0{
-          
-            
             guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
             // let atm_id = self.objAssetsListModel?.result.atmList[0].atmid
            // actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"

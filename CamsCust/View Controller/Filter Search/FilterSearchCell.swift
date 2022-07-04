@@ -8,7 +8,8 @@
 import UIKit
 
 class FilterSearchCell: UITableViewCell {
-
+    @IBOutlet weak var lblTitle: UILabel!
+    
     @IBOutlet weak var imgCheck: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

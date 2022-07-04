@@ -17,7 +17,9 @@ class DataManager: NSObject {
     let ACCEPTABLE_CHARACTERS_VERIFY = "0123456789"
     let ACCEPTABLE_CHARACTERS_ZIPCODE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 "
    
-   var search_true = ""
+    var search_true = ""
+    var survey_name = ""
+    var menu_name = ""
     var param :[String:Any] = [Parameter.AssetsParam.action_item_only:"",
                                Parameter.AssetsParam.answer_id:"",
                                Parameter.AssetsParam.atm_id : "",

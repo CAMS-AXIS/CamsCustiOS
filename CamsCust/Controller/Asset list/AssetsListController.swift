@@ -34,7 +34,7 @@ class AssetsListController: NSObject {
     func handleResponse(response : JSON?)
     {
         if let response = response {
-            if response["result"][Constant.Server_Key.Code].intValue == 200
+            if response[Constant.Server_Key.Code].intValue == 200
             {
                 print(response)
                 //                guard let dict = response[Constant.Server_Key.data].array else {
@@ -43,7 +43,7 @@ class AssetsListController: NSObject {
                 //                }
                 delegate?.AssetListSuccessResponse(dataArr: response, msg: response[Constant.Server_Key.message].stringValue)
             }
-            else if response["result"][Constant.Server_Key.Code].intValue != 200
+            else if response[Constant.Server_Key.Code].intValue != 200
             {
                 DispatchQueue.main.async(execute: {() -> Void in
                     self.delegate?.AssetListFailedResponse(error: response[Constant.Server_Key.message].stringValue)

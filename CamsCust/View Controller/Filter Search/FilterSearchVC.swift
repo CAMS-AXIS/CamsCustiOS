@@ -22,8 +22,32 @@ class FilterSearchVC: UIViewController {
     }
     
     @IBAction func bttnBack(_ sender: Any) {
+        if selectedCat == "Install Type"{
+            DataManager.shared.param[Parameter.AssetsParam.install_type] = ""
+        }
+        else if selectedCat == "Survey Name"{
+            DataManager.shared.survey_name = ""
+            DataManager.shared.param[Parameter.AssetsParam.service_id] = ""
+        }
+        else if selectedCat == "Image Name"{
+            DataManager.shared.param[Parameter.AssetsParam.image_id] = ""
+        }
+        else if selectedCat == "State"{
+            DataManager.shared.param[Parameter.AssetsParam.state_code] = ""
+        }
+        else if selectedCat == "Manufacturer"{
+            DataManager.shared.menu_name = ""
+            DataManager.shared.param[Parameter.AssetsParam.atm_manu_id] = ""
+        }
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func bttnDoneAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
     
 }
 extension FilterSearchVC:UITableViewDelegate,UITableViewDataSource{
@@ -66,6 +90,7 @@ extension FilterSearchVC:UITableViewDelegate,UITableViewDataSource{
             DataManager.shared.param[Parameter.AssetsParam.install_type] = Arr[indexPath.row]
         }
         else if selectedCat == "Survey Name"{
+            DataManager.shared.survey_name = self.objFilterModel?.result.serviceName[indexPath.row].serviceName ?? ""
             DataManager.shared.param[Parameter.AssetsParam.service_id] = "\(self.objFilterModel?.result.serviceName[indexPath.row].serviceID ?? 0)"
         }
         else if selectedCat == "Image Name"{
@@ -75,6 +100,8 @@ extension FilterSearchVC:UITableViewDelegate,UITableViewDataSource{
             DataManager.shared.param[Parameter.AssetsParam.state_code] = self.objFilterModel?.result.states[indexPath.row].stateID
         }
         else if selectedCat == "Manufacturer"{
+            DataManager.shared.menu_name = self.objFilterModel?.result.manufacturerList[indexPath.row].manufacturerName ?? ""
+            
             DataManager.shared.param[Parameter.AssetsParam.atm_manu_id] = "\(self.objFilterModel?.result.manufacturerList[indexPath.row].manufacturerID ?? 0)"
         }
                 

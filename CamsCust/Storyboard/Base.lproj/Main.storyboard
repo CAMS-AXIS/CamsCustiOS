@@ -15,7 +15,7 @@
         <array key="Inter-Medium.ttf">
             <string>Inter-Medium</string>
         </array>
-        <array key="Inter-Regular.ttf">
+        <array key="Inter-VariableFont_slnt,wght.ttf">
             <string>Inter-Regular</string>
         </array>
     </customFonts>
@@ -1223,6 +1223,9 @@
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bttnDone:" destination="tH0-J7-XbZ" eventType="touchUpInside" id="c08-rj-yXd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1293,6 +1296,9 @@
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rw3-oE-Xc0" secondAttribute="bottom" id="yYf-1P-eaU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bttnSwitch" destination="X0n-mN-8wY" id="Dyq-YL-0DS"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FilterCell2" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell2" rowHeight="110" id="ypC-CY-aT1" customClass="FilterCell2" customModule="CamsCust" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="134.5" width="375" height="110"/>
@@ -1359,6 +1365,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblTitle" destination="haY-qV-Q10" id="7DG-2J-Nje"/>
+                                            <outlet property="lblType" destination="Ahm-5H-aaL" id="gcT-bb-90f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1418,6 +1425,9 @@
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bttnDoneAction:" destination="pRb-2l-BG3" eventType="touchUpInside" id="3MQ-Xf-XcU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

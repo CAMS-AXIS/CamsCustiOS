@@ -29,9 +29,14 @@ class FilterVC: UIViewController {
         objFilterController.getFilterList(Param: param)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.filterTblVw.reloadData()
+    }
+    
     
     @IBAction func bttnCancel(_ sender: Any) {
-        DataManager.shared.search_true = "yes"
+        DataManager.shared.search_true = "no"
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func bttnDone(_ sender: Any) {
@@ -53,6 +58,7 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
             cell1.layoutMargins = UIEdgeInsets.zero
             cell1.preservesSuperviewLayoutMargins = false
             cell1.backgroundColor = UIColor.clear
+            cell1.bttnSwitch.addTarget(self, action: #selector(switchAction), for: .touchUpInside)
             return cell1
         }else{
             cell2 = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.FilterCell2) as! FilterCell2
@@ -61,6 +67,22 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
             cell2.preservesSuperviewLayoutMargins = false
             cell2.backgroundColor = UIColor.clear
             cell2.lblTitle.text = filterArr[indexPath.row]
+            if filterArr[indexPath.row] == "Install Type"{
+                cell2.lblType.text = "\(DataManager.shared.param[Parameter.AssetsParam.install_type] ?? "All")"
+            }
+            else if filterArr[indexPath.row] == "Survey Name"{
+                cell2.lblType.text = DataManager.shared.survey_name
+            }
+            else if filterArr[indexPath.row] == "Image Name"{
+                cell2.lblType.text = "\(DataManager.shared.param[Parameter.AssetsParam.image_id] ?? "All")"
+            }
+            
+            else if filterArr[indexPath.row] == "State"{
+                cell2.lblType.text = "\(DataManager.shared.param[Parameter.AssetsParam.state_code] ?? "All")"
+            }
+            else if filterArr[indexPath.row] == "Manufacturer"{
+                cell2.lblType.text = DataManager.shared.menu_name
+            }
             return cell2
         }
     }
@@ -89,9 +111,7 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
             dashboardVC?.selectedCat = filterArr[indexPath.row]
             dashboardVC?.objFilterModel = self.objFilterModel
         }
-        
-        
-        
+                
         self.navigationController?.pushViewController(dashboardVC!, animated: false)
     }
     
@@ -101,11 +121,25 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
         }else{
             return filterArr.count
         }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2;
     }
+    
+    @objc func switchAction(){
+        if cell1.bttnSwitch.isOn{
+            print("ON")
+        }else{
+            print("OFF")
+        }
+    }
+    
+    
+    
+    
+    
 }
 extension FilterVC : FilterControllerDelegate{
     func FilterListFailedResponse(error: String) {

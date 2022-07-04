@@ -5,6 +5,7 @@ import UIKit
 
 class FilterCell: UITableViewCell {
 
+    @IBOutlet weak var bttnSwitch: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

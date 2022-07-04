@@ -32,7 +32,7 @@ class AssetsListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if DataManager.shared.search_true == "yes"{
-            print("",DataManager.shared.param)
+            print("---",DataManager.shared.param)
             objAssetsListController.AssetList(Param: DataManager.shared.param)
         }
        
@@ -178,11 +178,15 @@ extension AssetsListVC:AssetsListControllerDelegate{
             print("=======++++",self.objAssetsListModel?.result.atmList.count)
 
             self.lblAssetCount.text = "\(self.objAssetsListModel?.result.atmList.count ?? 0) Assets"
+            if self.objAssetsListModel?.result.atmList.count != 0{
             guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
             self.actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"
             print(self.actionItemParam)
            
             self.objActionItemListController.ActionItemsList(Param:self.actionItemParam)
+            }else{
+                self.lblActionItemsCount.text = "0 Action Items"
+            }
             
             
             self.assetsListTblVw.reloadData()

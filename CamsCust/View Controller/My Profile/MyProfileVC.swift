@@ -15,6 +15,10 @@ class MyProfileVC: UIViewController {
     var objMyProfileModel : MyProfileModel?
     var selectPassword = ""
     var myPassword = "**********"
+    var objChangePasswordController = ChangePasswordController()
+    var changePasswordParam : [String:Any] = ["user_id":"",
+                                              "password": "",
+                                              "new_password":""]
     override func viewDidLoad() {
         super.viewDidLoad()
         objMyProfileController.delegate = self
@@ -26,6 +30,10 @@ class MyProfileVC: UIViewController {
         print(self.myPassword)
         param[Parameter.DashboardParam.customer_id] = "\(customerID)"
         objMyProfileController.getProfileDetails(Param: param)
+        
+        objChangePasswordController.delegate = self
+        
+        
     }
     
 
@@ -109,6 +117,15 @@ extension MyProfileVC:UITableViewDelegate,UITableViewDataSource{
     @objc func savePassword(){
         if isValidated(){
             print("yes")
+            guard let user_id = UserDefaults.standard.value(forKey: Constant.user_defaults_value.user_id) as? String else{return}
+
+            changePasswordParam["user_id"] = user_id
+            changePasswordParam["password"] = passwordCell.txtOldPass.text
+            changePasswordParam["new_password"] = passwordCell.txtConfirmPass.text
+            print("----->>>",changePasswordParam)
+            objChangePasswordController.changePassword(Param:changePasswordParam)
+            
+         
         }
     }
     
@@ -138,6 +155,13 @@ extension MyProfileVC:UITableViewDelegate,UITableViewDataSource{
             }
             return false
         }
+        else if (MyValidpassword(mypassword: passwordCell.txtNewPass.text!)) == false
+        {
+            DispatchQueue.main.async{
+                Utility.showAlert(message: Constant.Error_Message.Password_match_error, vc: self)
+            }
+            return false
+        }
         else if (passwordCell.txtConfirmPass.text?.isEmpty)! || passwordCell.txtConfirmPass.text == "" || passwordCell.txtConfirmPass.text == " " {
             DispatchQueue.main.async{
                 Utility.showAlert(message: Constant.Error_Message.Confirm_Password_Error, vc:self )
@@ -155,6 +179,15 @@ extension MyProfileVC:UITableViewDelegate,UITableViewDataSource{
             return true
         }
     }
+    
+    func MyValidpassword(mypassword : String) -> Bool
+    {
+        
+        let passwordreg =  ("(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.*[@#$%^&*]).{8,}")
+        let passwordtesting = NSPredicate(format: "SELF MATCHES %@", passwordreg)
+        return passwordtesting.evaluate(with: mypassword)
+    }
+    
 }
 extension MyProfileVC:MyProfileControllerDelegate{
     func getProfileFailedResponse(error: String) {
@@ -173,4 +206,25 @@ extension MyProfileVC:MyProfileControllerDelegate{
         })
     }
     
+}
+extension MyProfileVC: ChangePasswordControllerDelegate{
+    func changePasswordFailedResponse(error: String) {
+        DataManager.shared.hideLoader()
+        DispatchQueue.main.async(execute: {() -> Void in
+            Utility.alertWithOkMessage(title: Constant.variableText.appName, message: error, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {})
+        })
+    }
+    
+    func changePasswordSuccessResponse(dataArr: JSON, msg: String) {
+        DataManager.shared.hideLoader()
+        print("----->",dataArr)
+        DispatchQueue.main.async(execute: {() -> Void in
+            Utility.alertWithOkMessage(title: Constant.variableText.appName, message: msg, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {
+                
+                let vc = self.storyboard?.instantiateViewController(identifier: "LoginVC") as! LoginVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            })
+        })
+    }    
 }

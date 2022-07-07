@@ -616,6 +616,7 @@ extension UIView {
         }
     }
 }
+
 extension Date {
     ///
     /// Provides a humanised date. For instance: 1 minute, 1 week ago, 3 months ago

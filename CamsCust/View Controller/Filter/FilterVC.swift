@@ -131,8 +131,10 @@ extension FilterVC:UITableViewDelegate,UITableViewDataSource{
     @objc func switchAction(){
         if cell1.bttnSwitch.isOn{
             print("ON")
+            DataManager.shared.param[Parameter.AssetsParam.action_item_only] = 1
         }else{
             print("OFF")
+            DataManager.shared.param[Parameter.AssetsParam.action_item_only] = 0
         }
     }
     

@@ -84,6 +84,10 @@
 		73EA09EA282EA1F200CCAFA9 /* FilterSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA09E9282EA1F200CCAFA9 /* FilterSearchVC.swift */; };
 		73EA09EC282EA3CE00CCAFA9 /* FilterSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA09EB282EA3CE00CCAFA9 /* FilterSearchCell.swift */; };
 		73EA09EF282EA87E00CCAFA9 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA09EE282EA87E00CCAFA9 /* MapVC.swift */; };
+		EBD36A10287D413000BEFCBF /* MapVC+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD36A0F287D413000BEFCBF /* MapVC+API.swift */; };
+		EBD36A13287D429B00BEFCBF /* MapsPinsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD36A11287D429B00BEFCBF /* MapsPinsModel.swift */; };
+		EBD36A14287D429B00BEFCBF /* MapsPinsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD36A12287D429B00BEFCBF /* MapsPinsData.swift */; };
+		EBD36A18287D484E00BEFCBF /* SSCustPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD36A17287D484E00BEFCBF /* SSCustPointAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +193,10 @@
 		B1739F825BA8E484EDE47340 /* Pods-CamsCust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamsCust.debug.xcconfig"; path = "Target Support Files/Pods-CamsCust/Pods-CamsCust.debug.xcconfig"; sourceTree = "<group>"; };
 		B20833D47678A49D0F6987C5 /* Pods-CamsCust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamsCust.release.xcconfig"; path = "Target Support Files/Pods-CamsCust/Pods-CamsCust.release.xcconfig"; sourceTree = "<group>"; };
 		CCB230F1AC46008B6436F312 /* Pods_CamsCust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamsCust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD36A0F287D413000BEFCBF /* MapVC+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapVC+API.swift"; sourceTree = "<group>"; };
+		EBD36A11287D429B00BEFCBF /* MapsPinsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsPinsModel.swift; sourceTree = "<group>"; };
+		EBD36A12287D429B00BEFCBF /* MapsPinsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsPinsData.swift; sourceTree = "<group>"; };
+		EBD36A17287D484E00BEFCBF /* SSCustPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCustPointAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,7 +622,10 @@
 		73EA09ED282EA85E00CCAFA9 /* Map VC */ = {
 			isa = PBXGroup;
 			children = (
+				EBD36A16287D483600BEFCBF /* Custom Annotation */,
+				EBD36A15287D445400BEFCBF /* Map Models */,
 				73EA09EE282EA87E00CCAFA9 /* MapVC.swift */,
+				EBD36A0F287D413000BEFCBF /* MapVC+API.swift */,
 			);
 			path = "Map VC";
 			sourceTree = "<group>";
@@ -625,6 +636,23 @@
 				CCB230F1AC46008B6436F312 /* Pods_CamsCust.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EBD36A15287D445400BEFCBF /* Map Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBD36A12287D429B00BEFCBF /* MapsPinsData.swift */,
+				EBD36A11287D429B00BEFCBF /* MapsPinsModel.swift */,
+			);
+			path = "Map Models";
+			sourceTree = "<group>";
+		};
+		EBD36A16287D483600BEFCBF /* Custom Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				EBD36A17287D484E00BEFCBF /* SSCustPointAnnotation.swift */,
+			);
+			path = "Custom Annotation";
 			sourceTree = "<group>";
 		};
 		EC625ECE2A773396F0313100 /* Pods */ = {
@@ -837,6 +865,7 @@
 				73D133B0283E146D00E0B1F8 /* DataManager.swift in Sources */,
 				7349A85328697FCC006D3418 /* SwitchAccountModel.swift in Sources */,
 				73B44FAF28353C9C00A00515 /* ActionItemCell.swift in Sources */,
+				EBD36A13287D429B00BEFCBF /* MapsPinsModel.swift in Sources */,
 				7382710B2858AFF000607E03 /* ActionItemListModel.swift in Sources */,
 				735F477528291B1500059909 /* CamsCust.xcdatamodeld in Sources */,
 				73708CDB284121D6006B41AB /* DashboardModel.swift in Sources */,
@@ -844,6 +873,7 @@
 				734B3CF5282BE97500E6E1CC /* SwitchAccountVC.swift in Sources */,
 				73B44FB22835481500A00515 /* SelectSurveyVC.swift in Sources */,
 				73EA09EF282EA87E00CCAFA9 /* MapVC.swift in Sources */,
+				EBD36A18287D484E00BEFCBF /* SSCustPointAnnotation.swift in Sources */,
 				73D133BA283E19EC00E0B1F8 /* Reachability.swift in Sources */,
 				73403280283E53E200A47487 /* Utility.swift in Sources */,
 				738C30B5282CE38200FB9688 /* AssetsListVC.swift in Sources */,
@@ -866,9 +896,11 @@
 				735F47A328291ED100059909 /* LoginCell.swift in Sources */,
 				73B44FAD2835377900A00515 /* AssetsCollectionCell.swift in Sources */,
 				736024CF283E5C4800DBB8B3 /* Extension.swift in Sources */,
+				EBD36A14287D429B00BEFCBF /* MapsPinsData.swift in Sources */,
 				73C719D82861E64C0008CD2C /* MyProfileController.swift in Sources */,
 				73C719DA2861F4F40008CD2C /* MyProfileModel.swift in Sources */,
 				73C719D52861B0570008CD2C /* MyProfileCell.swift in Sources */,
+				EBD36A10287D413000BEFCBF /* MapVC+API.swift in Sources */,
 				7350B17F284E403D004DFBEF /* AssetsListController.swift in Sources */,
 				736024D1283E5F0C00DBB8B3 /* Parameter.swift in Sources */,
 				73D133B3283E191F00E0B1F8 /* APIManager.swift in Sources */,

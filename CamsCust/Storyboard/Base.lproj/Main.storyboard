@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hMw-23-mMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hMw-23-mMQ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -39,7 +40,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LoginCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoginCell" rowHeight="597" id="FIN-jK-hF6" customClass="LoginCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="597"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="597"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FIN-jK-hF6" id="m9N-97-jkN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
@@ -226,7 +227,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ForgotPasswordCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ForgotPasswordCell" rowHeight="597" id="9KV-e8-CLC" customClass="ForgotPasswordCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="597"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="597"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9KV-e8-CLC" id="ly5-93-7sS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
@@ -648,7 +649,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMenu" id="HPN-hK-AD6">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HPN-hK-AD6" id="pIe-Hl-OXz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
@@ -778,7 +779,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SwitchAccountCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SwitchAccountCell" rowHeight="126" id="2pY-6X-mLQ" customClass="SwitchAccountCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="355" height="126"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="355" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2pY-6X-mLQ" id="ugJ-PK-Vb6">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="126"/>
@@ -1056,7 +1057,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AssetsListCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssetsListCell" rowHeight="177" id="Oa0-bi-gWr" customClass="AssetsListCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="177"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oa0-bi-gWr" id="lXE-Ae-KOJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="177"/>
@@ -1244,7 +1245,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FilterCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" rowHeight="110" id="j1T-tf-BJb" customClass="FilterCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j1T-tf-BJb" id="MyS-7o-8lA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
@@ -1301,7 +1302,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FilterCell2" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell2" rowHeight="110" id="ypC-CY-aT1" customClass="FilterCell2" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="134.5" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="154.5" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ypC-CY-aT1" id="RLL-5U-rwO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
@@ -1446,7 +1447,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FilterSearchCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterSearchCell" rowHeight="110" id="6Vq-K3-gbb" customClass="FilterSearchCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Vq-K3-gbb" id="jr1-ch-Zws">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
@@ -1695,6 +1696,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="detailDirectionsAction:" destination="Xch-I7-NZ1" eventType="touchUpInside" id="0O7-SU-J3k"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfC-bS-2nW">
                                         <rect key="frame" x="20" y="221" width="335" height="17"/>
@@ -1750,6 +1754,11 @@ Salt Lake City, Utah
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="detailATMAddress" destination="pJP-hD-8tA" id="ccC-vl-aXI"/>
+                        <outlet property="detailATMDesc" destination="EPN-xe-FJo" id="Jeo-wJ-AcG"/>
+                        <outlet property="detailATMID" destination="NHM-aB-59d" id="bq6-R3-gk4"/>
+                        <outlet property="detailATMImage" destination="vKD-gV-ZHo" id="V1x-S0-Ulh"/>
+                        <outlet property="detailATMName" destination="5qE-hu-Dea" id="78Y-F3-KQp"/>
                         <outlet property="myMapView" destination="H8S-Oe-c8N" id="Cox-49-jEB"/>
                         <outlet property="viewDetails" destination="0oz-CS-EPU" id="May-wA-h2E"/>
                     </connections>
@@ -1829,7 +1838,7 @@ Salt Lake City, Utah
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyProfileCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyProfileCell" rowHeight="441" id="9hN-QB-WW1" customClass="MyProfileCell" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="355" height="441"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="355" height="441"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9hN-QB-WW1" id="3Ai-Fm-dkb">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="441"/>
@@ -1963,7 +1972,7 @@ Salt Lake City, Utah
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyProfileCell2" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyProfileCell2" rowHeight="441" id="6dP-Y6-VyA" customClass="MyProfileCell2" customModule="CamsCust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="465.5" width="355" height="441"/>
+                                        <rect key="frame" x="0.0" y="485.5" width="355" height="441"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6dP-Y6-VyA" id="Duz-zW-DAd">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="441"/>

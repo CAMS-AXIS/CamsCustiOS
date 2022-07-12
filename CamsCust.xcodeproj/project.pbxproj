@@ -61,6 +61,7 @@
 		738C30BE282D3F0100FB9688 /* FilterCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C30BD282D3F0100FB9688 /* FilterCell2.swift */; };
 		73966A0C283CC8C5006C5FD9 /* ReviewSurveyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73966A0B283CC8C5006C5FD9 /* ReviewSurveyCell.swift */; };
 		73966A0F283CCFFF006C5FD9 /* AssignTicketsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73966A0E283CCFFF006C5FD9 /* AssignTicketsVC.swift */; };
+		739892FE2874759500830C25 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739892FD2874759500830C25 /* ChangePasswordController.swift */; };
 		73B44FAB2835357F00A00515 /* AssetDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B44FAA2835357F00A00515 /* AssetDetailsCell.swift */; };
 		73B44FAD2835377900A00515 /* AssetsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B44FAC2835377900A00515 /* AssetsCollectionCell.swift */; };
 		73B44FAF28353C9C00A00515 /* ActionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B44FAE28353C9C00A00515 /* ActionItemCell.swift */; };
@@ -167,6 +168,7 @@
 		738C30BD282D3F0100FB9688 /* FilterCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell2.swift; sourceTree = "<group>"; };
 		73966A0B283CC8C5006C5FD9 /* ReviewSurveyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSurveyCell.swift; sourceTree = "<group>"; };
 		73966A0E283CCFFF006C5FD9 /* AssignTicketsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignTicketsVC.swift; sourceTree = "<group>"; };
+		739892FD2874759500830C25 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
 		73B44FAA2835357F00A00515 /* AssetDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsCell.swift; sourceTree = "<group>"; };
 		73B44FAC2835377900A00515 /* AssetsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsCollectionCell.swift; sourceTree = "<group>"; };
 		73B44FAE28353C9C00A00515 /* ActionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItemCell.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				73C719D72861E64C0008CD2C /* MyProfileController.swift */,
+				739892FD2874759500830C25 /* ChangePasswordController.swift */,
 			);
 			path = "My Profile";
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				73B44FAB2835357F00A00515 /* AssetDetailsCell.swift in Sources */,
 				738C30B7282CE3A400FB9688 /* AssetsListCell.swift in Sources */,
 				735635BD282A86E3007B35B9 /* Constants.swift in Sources */,
+				739892FE2874759500830C25 /* ChangePasswordController.swift in Sources */,
 				73966A0F283CCFFF006C5FD9 /* AssignTicketsVC.swift in Sources */,
 				735F47C42829313300059909 /* ForgotPasswordCell.swift in Sources */,
 				734F2BFF28362C8800C42DB1 /* ReviewSurveyVC.swift in Sources */,

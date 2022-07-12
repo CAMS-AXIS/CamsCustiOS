@@ -21,6 +21,7 @@ struct Constant {
         
         static let SWITCH_ACCOUNT_URL = "https://m3gv0ee1fb.execute-api.us-east-1.amazonaws.com/development/bank-list"
         static let FILTER_LIST_URL = "https://kfnvcq6f56.execute-api.us-east-1.amazonaws.com/prod/prod_customer_asset_list_dropdown"
+        static let CHANGE_PASSWORD_URL = "https://tpmk3qt4x8.execute-api.us-east-1.amazonaws.com/development/change-password"
         
         
         
@@ -85,6 +86,9 @@ struct Constant {
         static let Confirm_Password_Error               = "Please enter your confirm pasword"
         static let Current_password_Error               = "Please enter your current password correctly"
         static let Same_Password_Error                  = "New password and confirm password should be same"
+        
+        static let Password_match_error                  = "Password should contain one upper case,one lower case and one digit"
+
 
     }
     struct user_defaults_value

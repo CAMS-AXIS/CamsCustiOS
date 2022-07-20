@@ -23,6 +23,13 @@ struct Constant {
         static let FILTER_LIST_URL = "https://kfnvcq6f56.execute-api.us-east-1.amazonaws.com/prod/prod_customer_asset_list_dropdown"
         static let CHANGE_PASSWORD_URL = "https://tpmk3qt4x8.execute-api.us-east-1.amazonaws.com/development/change-password"
         
+        
+        
+        static let ASSET_DETAILS_URL = "https://6giqs5qy08.execute-api.us-east-1.amazonaws.com/development/atm-profile"
+        
+        //MAP VIEW
+        static let MAP_ASSET_PIN = "https://owdfsdh309.execute-api.us-east-1.amazonaws.com/development/asset-list-map-pin"
+        
 }
     struct CellIdentifier {
         static let DashboardCollectionCell = "DashboardCollectionCell"
@@ -39,6 +46,9 @@ struct Constant {
         static let ReviewSurveyCell = "ReviewSurveyCell"
         static let MyProfileCell = "MyProfileCell"
         static let MyProfileCell2 = "MyProfileCell2"
+        static let ServiceImgCell = "ServiceImgCell"
+        static let ServiceImgCollectionCell = "ServiceImgCollectionCell"
+        static let ServiceListCell = "ServiceListCell"
     }
     struct StoryboardIdentifier {
         static let AssetsListVC = "AssetsListVC"

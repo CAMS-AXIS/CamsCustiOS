@@ -25,18 +25,17 @@ class AssetsListVC: UIViewController {
         DataManager.shared.param[Parameter.AssetsParam.customer_id] = "\(customerID)"
         print(DataManager.shared.param)
         objAssetsListController.AssetList(Param: DataManager.shared.param)
-        
         setupTableView()
-
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if DataManager.shared.search_true == "yes"{
             print("---",DataManager.shared.param)
             objAssetsListController.AssetList(Param: DataManager.shared.param)
         }
-       
     }
+    
     @IBAction func bttnBack(_ sender: Any) {
         DataManager.shared.search_true = "no"
         self.navigationController?.popViewController(animated: true)
@@ -44,43 +43,50 @@ class AssetsListVC: UIViewController {
     @IBAction func bttnAssetAction(_ sender: Any) {
         self.lblAssetCount.textColor = UIColor.blue
         self.lblActionItemsCount.textColor = UIColor.black
-        
         guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
         DataManager.shared.param[Parameter.AssetsParam.customer_id] = "\(customerID)"
         print(DataManager.shared.param)
         self.selectedStr = "assets"
         objAssetsListController.AssetList(Param: DataManager.shared.param)
-        
     }
-    
-    
     @IBAction func bttnActionItem(_ sender: Any) {
         self.lblAssetCount.textColor = UIColor.black
         self.lblActionItemsCount.textColor = UIColor.blue
         if self.objAssetsListModel?.result.atmList.count != 0{
             guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
-            // let atm_id = self.objAssetsListModel?.result.atmList[0].atmid
-           // actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
-            actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"
-            print(actionItemParam)
-            self.selectedStr = "actions"
-            objActionItemListController.ActionItemsList(Param:actionItemParam)
+                actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"
+                actionItemParam["sort_by_asset_id"] = ""
+                actionItemParam["sort_by_action_items"] = ""
+                actionItemParam["action_item_only"] = 0
+                actionItemParam["service_id"] = ""
+                actionItemParam["state_code"] = ""
+                actionItemParam["city"] = ""
+                actionItemParam["atm_manu_id"] = ""
+                actionItemParam["atm_model_id"] = ""
+                actionItemParam["start_date"] = ""
+                actionItemParam["end_date"] = ""
+                actionItemParam["question_id"] = ""
+                actionItemParam["answer_id"] = ""
+                actionItemParam["image_id"] = ""
+                actionItemParam["install_type"] = ""
+                actionItemParam["atm_id"] = ""
+                actionItemParam["category"] = ""
+                actionItemParam["sub_categories"] = ""
+                print(actionItemParam)
+                self.selectedStr = "actions"
+                objActionItemListController.ActionItemsList(Param:actionItemParam)
         }
     }
-    
-    
     @IBAction func bttnFilterAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.FilterVC) as? FilterVC
         self.navigationController?.pushViewController(dashboardVC!, animated: false)
     }
-    
     @IBAction func bttnLocation(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.MapVC) as? MapVC
         self.navigationController?.pushViewController(dashboardVC!, animated: false)
     }
-    
     func setupTableView(){
         assetsListTblVw.delegate = self
         assetsListTblVw.dataSource = self
@@ -116,19 +122,18 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
                 cell.lblDesc.text = self.objActionItemListModel?.result.actionList[indexPath.row].issueDescription
                 cell.lblCode.text = self.objActionItemListModel?.result.actionList[indexPath.row].issueSubType
                 cell.lblActionCount.isHidden = true
-               // cell.lblActionCount.text = "\(self.objActionItemListModel?.result.actionList[indexPath.row].actionCount ?? 0)"
+                // cell.lblActionCount.text = "\(self.objActionItemListModel?.result.actionList[indexPath.row].actionCount ?? 0)"
                 self.cell.imgAsset.sd_setImage(with: URL(string:(self.objActionItemListModel?.result.actionList[indexPath.row].ImageURL)!), placeholderImage: UIImage(named: "image 16"))
             }
         }
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "ProductDetails", bundle: Bundle.main)
         let dashboardVC = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardIdentifier.AssetDetailsVC) as? AssetDetailsVC
+        dashboardVC!.asset_id = "\(self.objAssetsListModel!.result.atmList[indexPath.row].atmid!)"
         self.navigationController?.pushViewController(dashboardVC!, animated: false)
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.selectedStr == "assets"{
             if let _ = self.objAssetsListModel {
@@ -143,24 +148,21 @@ extension AssetsListVC:UITableViewDelegate,UITableViewDataSource{
                 return 0
             }
         }
-     }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
-    
     @objc func showActionItems(sender:UIButton){
         self.lblAssetCount.textColor = UIColor.black
         self.lblActionItemsCount.textColor = UIColor.blue
-        
         let atm_id = self.objAssetsListModel?.result.atmList[sender.tag].atmid
-        actionItemParam[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
-        print(actionItemParam)
+        var param : [String:Any] = [String:Any]()
+        param[Parameter.AssetsParam.atm_id] = "\(atm_id!)"
+        print(param)
         self.selectedStr = "actions"
-        objActionItemListController.ActionItemsList(Param:actionItemParam)
-        
+        objActionItemListController.ActionItemsList(Param:param)
     }
-    
 }
 extension AssetsListVC:AssetsListControllerDelegate{
     func AssetListFailedResponse(error: String) {
@@ -176,19 +178,33 @@ extension AssetsListVC:AssetsListControllerDelegate{
         DispatchQueue.main.async(execute: {() -> Void in
             self.objAssetsListModel = AssetsListModel(myResult: dataArr)
             print("=======++++",self.objAssetsListModel?.result.atmList.count)
-
             self.lblAssetCount.text = "\(self.objAssetsListModel?.result.atmList.count ?? 0) Assets"
             if self.objAssetsListModel?.result.atmList.count != 0{
             guard let customerID = UserDefaults.standard.value(forKey: Constant.user_defaults_value.customerID) as? Int else{return}
-            self.actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"
+            self.actionItemParam[Parameter.AssetsParam.customer_id] = "\(customerID)"                
+                self.actionItemParam["sort_by_asset_id"] = ""
+                self.actionItemParam["sort_by_action_items"] = ""
+                self.actionItemParam["action_item_only"] = 0
+                self.actionItemParam["service_id"] = ""
+                self.actionItemParam["state_code"] = ""
+                self.actionItemParam["city"] = ""
+                self.actionItemParam["atm_manu_id"] = ""
+                self.actionItemParam["atm_model_id"] = ""
+                self.actionItemParam["start_date"] = ""
+                self.actionItemParam["end_date"] = ""
+                self.actionItemParam["question_id"] = ""
+                self.actionItemParam["answer_id"] = ""
+                self.actionItemParam["image_id"] = ""
+                self.actionItemParam["install_type"] = ""
+                self.actionItemParam["atm_id"] = ""
+                self.actionItemParam["category"] = ""
+                self.actionItemParam["sub_categories"] = ""
+                
             print(self.actionItemParam)
-           
             self.objActionItemListController.ActionItemsList(Param:self.actionItemParam)
             }else{
                 self.lblActionItemsCount.text = "0 Action Items"
             }
-            
-            
             self.assetsListTblVw.reloadData()
         })
     }    
@@ -200,7 +216,6 @@ extension AssetsListVC:ActionItemListControllerDelegate{
             Utility.alertWithOkMessage(title: Constant.variableText.appName, message: error, buttonText: Constant.variableText.ok, viewController: self, completionHandler: {})
         })
     }
-    
     func ActionItemsListSuccessResponse(dataArr: JSON, msg: String) {
         DataManager.shared.hideLoader()
         print("----->",dataArr)

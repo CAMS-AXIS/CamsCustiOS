@@ -12,4 +12,7 @@ target 'CamsCust' do
   pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'SDWebImage'
+  
+  pod 'Alamofire', '~> 5.2'
+  
 end

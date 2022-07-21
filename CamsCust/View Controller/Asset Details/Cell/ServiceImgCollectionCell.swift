@@ -9,4 +9,5 @@ import UIKit
 
 class ServiceImgCollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var imgService: UIImageView!
 }

@@ -15,7 +15,7 @@
         <array key="Inter-Medium.ttf">
             <string>Inter-Medium</string>
         </array>
-        <array key="Inter-VariableFont_slnt,wght.ttf">
+        <array key="Inter-Regular.ttf">
             <string>Inter-Regular</string>
         </array>
     </customFonts>
@@ -110,6 +110,9 @@
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
                                                                     <size key="customSize" width="373" height="206"/>
+                                                                    <connections>
+                                                                        <outlet property="imgAtms" destination="yYg-e8-AWQ" id="3hK-hp-U0s"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
@@ -233,6 +236,11 @@
                                         <connections>
                                             <outlet property="AssetCollectionVw" destination="UUi-wn-chO" id="ky9-3s-62H"/>
                                             <outlet property="bttnSurvey" destination="SY9-HS-QI0" id="CFm-as-fpe"/>
+                                            <outlet property="lblActionItemsCount" destination="0qF-bA-DVX" id="1XU-wv-LQ3"/>
+                                            <outlet property="lblAddress" destination="iNF-Na-nGm" id="FTh-Ae-p1P"/>
+                                            <outlet property="lblDes" destination="v37-nU-Fvu" id="NNc-m9-asD"/>
+                                            <outlet property="lblId" destination="My3-eI-abM" id="z0U-2T-JmC"/>
+                                            <outlet property="lblTitle" destination="xdK-CL-n1s" id="G2w-gL-6Ox"/>
                                             <outlet property="pageCount" destination="uVQ-Su-lGP" id="nfb-kb-gbb"/>
                                         </connections>
                                     </tableViewCell>
@@ -271,7 +279,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 16" translatesAutoresizingMaskIntoConstraints="NO" id="jc3-vz-YGd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 16" translatesAutoresizingMaskIntoConstraints="NO" id="jc3-vz-YGd">
                                                             <rect key="frame" x="15" y="59.5" width="345" height="345"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="350" id="HFR-BY-oVZ"/>
@@ -344,6 +352,13 @@
                                                 <constraint firstItem="Xpj-ME-xUt" firstAttribute="top" secondItem="8h3-yD-pu6" secondAttribute="top" id="vhm-ci-tAy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgActionItem" destination="jc3-vz-YGd" id="a2t-nj-sGE"/>
+                                            <outlet property="lblActionDes" destination="Wdx-ik-4pj" id="Zx2-kP-aEm"/>
+                                            <outlet property="lblActionTitle" destination="Lba-vH-IHf" id="dmZ-If-vZA"/>
+                                            <outlet property="lblDate" destination="E0b-Qf-V7D" id="iYO-jd-f1a"/>
+                                            <outlet property="lblTime" destination="GrB-If-RaQ" id="W7q-rX-QsM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ServiceImgCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ServiceImgCell" rowHeight="335" id="qI8-Tp-Ekm" customClass="ServiceImgCell" customModule="CamsCust" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="960.5" width="375" height="335"/>
@@ -390,6 +405,9 @@
                                                                             <constraint firstAttribute="trailing" secondItem="aCG-v9-rj8" secondAttribute="trailing" id="tkS-2N-FEJ"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="imgService" destination="aCG-v9-rj8" id="UOs-nu-vUR"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
@@ -493,7 +511,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lblDate" destination="cJ3-Tx-rzQ" id="tZP-Av-Us8"/>
                                             <outlet property="lblServiceTag" destination="k5h-9X-fzJ" id="ykK-AU-ClU"/>
+                                            <outlet property="lblTime" destination="MXi-oz-V2M" id="8i2-l7-5Du"/>
+                                            <outlet property="lblTitle" destination="1VP-nd-Scy" id="hsP-v6-e4f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -9,6 +9,9 @@ import UIKit
 
 class ServiceListCell: UITableViewCell {
 
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblServiceTag: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

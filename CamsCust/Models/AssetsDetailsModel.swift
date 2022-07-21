@@ -25,7 +25,7 @@ class assetsDetailsData: NSObject {
     let atmInfo: ATMInfo
     var atmImages = [allAtmImages]()
     let atmMap: ATMMap
-  //  let actionItems: [JSONAny]
+    var actionItems = [ActionItemsData]()
     var services = [ServiceList]()
     init(assetsDetailsData:JSON) {
         if let arr = assetsDetailsData["serviceImages"].array
@@ -56,7 +56,50 @@ class assetsDetailsData: NSObject {
             }
         }
         
+        if let arr = assetsDetailsData["actionItems"].array
+        {
+            for item in arr
+            {
+                let obj = ActionItemsData(objActionItemsData: item)
+                self.actionItems.append(obj)
+            }
+        }
+                
     }
+}
+// MARK: - ActionItem
+class ActionItemsData: NSObject {
+    let imageID: String?
+    let issueDescription: String
+    let imageName: String?
+    let issueType: String
+    let atmid: Int?
+    let questionID: Int
+    let imageURL: String?
+    let jobID: Int?
+    let actionItemExtension: String?
+    let answerIssueID: Int?
+    let issueSubType: String?
+    let customerID : Int?
+    let serviceInstanceID : Int?
+    
+    init(objActionItemsData:JSON) {
+        self.imageID = objActionItemsData["ImageId"].stringValue
+        self.issueDescription = objActionItemsData["IssueDescription"].stringValue
+        self.imageName = objActionItemsData["ImageName"].stringValue
+        self.issueType = objActionItemsData["IssueType"].stringValue
+        self.atmid = objActionItemsData["ATMID"].intValue
+        self.imageURL = objActionItemsData["imageURL"].stringValue
+        self.jobID = objActionItemsData["JobId"].intValue
+        self.actionItemExtension = objActionItemsData["Extension"].stringValue
+        self.questionID = objActionItemsData["QuestionId"].intValue
+        self.answerIssueID = objActionItemsData["AnswerIssueID"].intValue
+        self.issueSubType = objActionItemsData["IssueSubType"].stringValue
+        self.customerID = objActionItemsData["CustomerId"].intValue
+        self.serviceInstanceID = objActionItemsData["ServiceInstanceId"].intValue
+        
+    }
+
 }
 
 // MARK: - Image

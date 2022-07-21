@@ -16,6 +16,7 @@ class AssetDetailsVC: UIViewController {
     var objAssetsDetailsController = AssetsDetailsController()
     var asset_id = String()
     var param : [String:Any] = ["ATMID" : ""]
+    var objAssetsDetailsModel : AssetsDetailsModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -23,7 +24,7 @@ class AssetDetailsVC: UIViewController {
         print("asset_id is : ",asset_id)
         param["ATMID"] = self.asset_id
         objAssetsDetailsController.getAssetsDetails(Param: param)
-
+        
     }
     
     @IBAction func bttnBack(_ sender: Any) {
@@ -37,13 +38,15 @@ class AssetDetailsVC: UIViewController {
     func setupCollectionView(){
         cell.AssetCollectionVw.delegate = self
         cell.AssetCollectionVw.dataSource = self
+        cell.AssetCollectionVw.reloadData()
     }
-
+    
     func setupServiceCollectionView(){
         serviceImgCell.serviceImgCollectionVw.delegate = self
         serviceImgCell.serviceImgCollectionVw.dataSource = self
+        serviceImgCell.serviceImgCollectionVw.reloadData()
     }
-
+    
 }
 extension AssetDetailsVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,10 +57,33 @@ extension AssetDetailsVC:UITableViewDelegate,UITableViewDataSource{
             cell.preservesSuperviewLayoutMargins = false
             cell.backgroundColor = UIColor.clear
             cell.bttnSurvey.addTarget(self, action: #selector(gotoSurveyPage), for: .touchUpInside)
+            
+            if let _ = self.objAssetsDetailsModel?.data{
+                cell.lblTitle.text = self.objAssetsDetailsModel?.data?.atmInfo.atmDescription
+                cell.lblId.text = self.objAssetsDetailsModel?.data?.atmInfo.institutionAssignedID
+                cell.lblDes.text = self.objAssetsDetailsModel?.data?.atmInfo.atmModel
+                cell.lblAddress.text = self.objAssetsDetailsModel?.data?.atmInfo.comments
+                cell.lblActionItemsCount.text = "Action Items (\(self.objAssetsDetailsModel?.data?.actionItems.count ?? 0))"
+                cell.pageCount.numberOfPages = (self.objAssetsDetailsModel?.data?.atmImages.count)!
+                cell.pageCount.currentPage = indexPath.row
+            }
+            
             setupCollectionView()
             return cell
         }else if indexPath.section == 1{
             itemCell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.ActionItemCell) as! ActionItemCell
+            
+            if let _ = self.objAssetsDetailsModel?.data{
+                if self.objAssetsDetailsModel?.data?.actionItems.count != 0{
+                    itemCell.lblActionTitle.text = self.objAssetsDetailsModel?.data?.actionItems[indexPath.row].issueType
+                    itemCell.lblActionDes.text = self.objAssetsDetailsModel?.data?.actionItems[indexPath.row].issueDescription
+                    self.itemCell.imgActionItem.sd_setImage(with: URL(string:(self.objAssetsDetailsModel?.data?.actionItems[indexPath.row].imageURL)!), placeholderImage: UIImage(named: "image 12"))
+                }
+                
+                
+            }
+            
+            
             itemCell.selectionStyle = .none
             itemCell.layoutMargins = UIEdgeInsets.zero
             itemCell.preservesSuperviewLayoutMargins = false
@@ -82,6 +108,17 @@ extension AssetDetailsVC:UITableViewDelegate,UITableViewDataSource{
             }else{
                 serviceListCell.lblServiceTag.isHidden = true
             }
+            
+            
+            if let _ = self.objAssetsDetailsModel?.data{
+            if self.objAssetsDetailsModel?.data?.services.count != 0{
+                serviceListCell.lblTime.text = self.objAssetsDetailsModel?.data?.services[indexPath.row].time
+                serviceListCell.lblDate.text = self.objAssetsDetailsModel?.data?.services[indexPath.row].date
+                serviceListCell.lblTitle.text = self.objAssetsDetailsModel?.data?.services[indexPath.row].serviceName
+            }
+            }
+            
+            
             return serviceListCell
         }
         
@@ -99,17 +136,38 @@ extension AssetDetailsVC:UITableViewDelegate,UITableViewDataSource{
         }
         else if section == 1
         {
-        return 2
+            if let _ = self.objAssetsDetailsModel?.data{
+            if self.objAssetsDetailsModel?.data?.actionItems.count != 0{
+                return (self.objAssetsDetailsModel?.data?.actionItems.count)!
+            }else{
+                return 0
+            }
+            }
+            else
+            {
+                return 0
+            }
         }else if section == 2
         {
             return 1
         }else{
-            return 5
+            
+            if let _ = self.objAssetsDetailsModel?.data{
+            if self.objAssetsDetailsModel?.data?.services.count != 0{
+                return (self.objAssetsDetailsModel?.data?.services.count)!
+            }else{
+                return 0
+            }
+            }
+            else
+            {
+                return 0
+            }
+
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 4;
     }
     @objc func gotoSurveyPage(){
@@ -126,24 +184,57 @@ extension AssetDetailsVC:UICollectionViewDelegate, UICollectionViewDataSource,UI
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == serviceImgCell.serviceImgCollectionVw{
-            return 12
+            if let _ = self.objAssetsDetailsModel?.data{
+            if self.objAssetsDetailsModel?.data?.serviceImages.count != 0{
+                return (self.objAssetsDetailsModel?.data?.serviceImages.count)!
+            }else{
+                return 0
+            }
+            }
+            else
+            {
+                return 0
+            }
         }else
         {
-            return 5
+            if let _ = self.objAssetsDetailsModel?.data{
+            if self.objAssetsDetailsModel?.data?.atmImages.count != 0{
+                return (self.objAssetsDetailsModel?.data?.atmImages.count)!
+            }else{
+                return 0
+            }
+            }
+            else
+            {
+                return 0
+            }
         }
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == serviceImgCell.serviceImgCollectionVw{
             serviceCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellIdentifier.ServiceImgCollectionCell, for: indexPath) as! ServiceImgCollectionCell
+            if let _ = self.objAssetsDetailsModel?.data{
+                if self.objAssetsDetailsModel?.data?.serviceImages.count != 0{
+                    self.serviceCollectionCell.imgService.sd_setImage(with: URL(string:(self.objAssetsDetailsModel?.data?.serviceImages[indexPath.row].imageURL)!), placeholderImage: UIImage(named: "image 12"))
+                }
+            }
             return serviceCollectionCell
         }else{
             collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellIdentifier.AssetsCollectionCell, for: indexPath) as! AssetsCollectionCell
+            
+            if let _ = self.objAssetsDetailsModel?.data{
+                if self.objAssetsDetailsModel?.data?.atmImages.count != 0{
+                    self.collectionCell.imgAtms.sd_setImage(with: URL(string:(self.objAssetsDetailsModel?.data?.atmImages[indexPath.row].imageURL)!), placeholderImage: UIImage(named: "image 16"))
+                    
+                }
+            }
+                        
             return collectionCell
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == serviceImgCell.serviceImgCollectionVw{
@@ -151,14 +242,15 @@ extension AssetDetailsVC:UICollectionViewDelegate, UICollectionViewDataSource,UI
             return layout
         }else
         {
-            return CGSize(width: (cell.AssetCollectionVw.frame.width), height:( cell.AssetCollectionVw.frame.height))
+           // return CGSize(width: (cell.AssetCollectionVw.frame.width - 20), height:( cell.AssetCollectionVw.frame.height))
+            
+            return CGSize(width: 360, height:300)
         }
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-    }
         
+    }
+    
 }
 extension AssetDetailsVC:AssetsDetailsControllerDelegate{
     func AssetsDetailsFailedResponse(error: String) {
@@ -172,11 +264,9 @@ extension AssetDetailsVC:AssetsDetailsControllerDelegate{
         DataManager.shared.hideLoader()
         print("----->",dataArr)
         DispatchQueue.main.async(execute: {() -> Void in
-            
+            self.objAssetsDetailsModel = AssetsDetailsModel(objAssets: dataArr)
+            print("=======>",self.objAssetsDetailsModel?.data?.actionItems.count)
             self.assetTblVw.reloadData()
-            
         })
     }
-    
-    
 }
